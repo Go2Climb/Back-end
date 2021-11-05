@@ -2,10 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Go2Climb.API.Domain.Repositories;
+using Go2Climb.API.Domain.Services;
+using Go2Climb.API.Persistence.Contexts;
+using Go2Climb.API.Persistence.Repositories;
+using Go2Climb.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -31,6 +37,17 @@ namespace Go2Climb.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Go2Climb.API", Version = "v1"});
             });
+            
+            //Configure In-Memory Database
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseInMemoryDatabase("go2climb-api");
+            });
+            
+            //Dependency Injection Rules
+            services.AddScoped<IAgencyReviewRepository, AgencyReviewsRepository>();
+            services.AddScoped<IAgencyReviewService, AgencyReviewService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

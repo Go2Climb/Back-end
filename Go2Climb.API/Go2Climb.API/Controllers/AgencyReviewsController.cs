@@ -12,12 +12,12 @@ namespace Go2Climb.API.Controllers
     public class AgencyReviewsController : ControllerBase
     {
         private readonly IAgencyReviewService _agencyReviewService;
-        private readonly IMapper _mapper;
+    //  private readonly IMapper _mapper;
 
-        public AgencyReviewsController(IAgencyReviewService agencyReviewService, IMapper mapper)
+        public AgencyReviewsController(IAgencyReviewService agencyReviewService /*, IMapper mapper */)
         {
             _agencyReviewService = agencyReviewService;
-            _mapper = mapper;
+    //      _mapper = mapper;
         }
 
         [HttpGet]
