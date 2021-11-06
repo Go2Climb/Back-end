@@ -50,6 +50,8 @@ namespace Go2Climb.API
             //Dependency Injection Rules
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IHiredServiceRepository, HiredServiceRepository>();
+            services.AddScoped<IHiredServiceService, HiredServiceService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             
             //AutoMapper Dependency Injection 
