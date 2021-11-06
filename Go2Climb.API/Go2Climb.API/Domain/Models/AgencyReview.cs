@@ -5,15 +5,15 @@
         public int Id { get; set; }
         public string Date { get; set; }
         public string Comment { get; set; }
-        public short ProfessionalismScore { get; set; }
-        public short SecurityScore { get; set; }
-        public short QualityScore { get; set; }
-        public short CostScore { get; set; }
-
+        public double ProfessionalismScore { get; set; }
+        public double SecurityScore { get; set; }
+        public double QualityScore { get; set; }
+        public double CostScore { get; set; }
+        
         //Relationships
-        public string AgencyId { get; set; }
-        //  public Agency Agency { get; set; }
-        public string CustomerId { get; set; }
-        //  public Customer Customer { get; set; }
+        public int AgencyId { get; set; }
+    //  public Agency Agency { get; set; }
+        public int CustomerId { get; set; }
+        public Customer Customer { get; set; }
     }
 }
