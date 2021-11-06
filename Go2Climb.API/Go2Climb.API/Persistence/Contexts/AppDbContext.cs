@@ -131,8 +131,8 @@ namespace Go2Climb.API.Persistence.Contexts
             (
                 new Activity { Id = 1, Name = "activity1", Description = "description1", ServiceId = 1},
                 new Activity { Id = 2, Name = "activity2", Description = "description2", ServiceId = 1},
-                new Activity { Id = 1, Name = "activity2", Description = "description1", ServiceId = 2},
-                new Activity { Id = 2, Name = "activity2", Description = "description2", ServiceId = 2}
+                new Activity { Id = 3, Name = "activity2", Description = "description1", ServiceId = 2},
+                new Activity { Id = 4, Name = "activity2", Description = "description2", ServiceId = 2}
             );
             //Service Entity
             builder.Entity<Service>().ToTable("Services");
