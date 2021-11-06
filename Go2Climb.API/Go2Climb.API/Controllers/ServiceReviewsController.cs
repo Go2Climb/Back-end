@@ -26,16 +26,19 @@ namespace Go2Climb.API.Controllers
         public async Task<IEnumerable<ServiceReview>> GetAllAsync()
         {
             var serviceReview = await _serviceReviewService.ListAsync();
+            //TODO: RETURN SERVICE REVIEW RESOURCE
             return serviceReview;
         }
         
         [HttpGet("{id}")]
-        public async Task<ServiceReview> GetByIdAsync(int id)
+        public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var serviceReview = await _serviceReviewService.GetByIdAsync(id);
-            //TODO: Unhappy response
+            var result = await _serviceReviewService.GetByIdAsync(id);
             
-            return serviceReview;
+            if (!result.Success)
+                return BadRequest(result.Message);
+            
+            return Ok(result.Resource);
         }
 
         [HttpPost]

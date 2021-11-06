@@ -8,7 +8,7 @@ namespace Go2Climb.API.Domain.Services
     public interface IAgencyReviewService
     {
         Task<IEnumerable<AgencyReview>> ListAsync();
-        Task<AgencyReview> GetByIdAsync(int id);
+        Task<AgencyReviewResponse> GetByIdAsync(int id);
         Task<AgencyReviewResponse> SaveAsync(AgencyReview agencyReview);
         Task<AgencyReviewResponse> DeleteAsync(int id);
 

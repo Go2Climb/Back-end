@@ -61,8 +61,8 @@ namespace Go2Climb.API.Persistence.Contexts
             //Seed Data
             builder.Entity<AgencyReview>().HasData
             (
-                new AgencyReview {Id = 1, Date = "September 2021", Comment = "I had a good experience with this service.", ProfessionalismScore = 5, SecurityScore = 5, QualityScore = 5, CostScore = 5},
-                new AgencyReview {Id = 2, Date = "December 2020", Comment = "It is not my first time with TravelNew, they never disappoint me", ProfessionalismScore = 4, SecurityScore = 3, QualityScore = 4.5, CostScore = 3}
+                new AgencyReview {Id = 1, Date = "September 2021", Comment = "I had a good experience with this service.", ProfessionalismScore = 5, SecurityScore = 5, QualityScore = 5, CostScore = 5 },
+                new AgencyReview {Id = 2, Date = "December 2020", Comment = "It is not my first time with TravelNew, they never disappoint me", ProfessionalismScore = 4, SecurityScore = 3, QualityScore = 4.5 }
             );
             
             //Constrains

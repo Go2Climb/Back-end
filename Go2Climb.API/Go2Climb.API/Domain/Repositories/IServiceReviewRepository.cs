@@ -8,8 +8,8 @@ namespace Go2Climb.API.Domain.Repositories
     {
         Task<IEnumerable<ServiceReview>> ListAsync();
         Task<ServiceReview> FindByIdAsync(int id);
-        //TODO: Check this method
-    //  Task<IEnumerable<AgencyReview>> FindByCategoryId(int categoryId);
+        //TODO: Implement the FindByService method
+    //  Task<IEnumerable<ServiceReview>> FindByServiceId(int serviceId);
         Task AddAsync(ServiceReview serviceReview);
         void Remove(ServiceReview serviceReview);
     }

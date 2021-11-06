@@ -25,17 +25,20 @@ namespace Go2Climb.API.Controllers
         [HttpGet]
         public async Task<IEnumerable<AgencyReview>> GetAllAsync()
         {
-            var agencyReview = await _agencyReviewService.ListAsync();
-            return agencyReview;
+            var agencyReviews = await _agencyReviewService.ListAsync();
+            //TODO: RETURN AGENCY REVIEW RESOURCE
+            return agencyReviews;
         }
 
         [HttpGet("{id}")]
-        public async Task<AgencyReview> GetByIdAsync(int id)
+        public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var agencyReview = await _agencyReviewService.GetByIdAsync(id);
-            //TODO: Unhappy response
-
-            return agencyReview;
+            var result = await _agencyReviewService.GetByIdAsync(id);
+        
+            if (!result.Success)
+                return BadRequest(result.Message);
+            
+            return Ok(result.Resource);
         }
 
         [HttpPost]
@@ -67,25 +70,5 @@ namespace Go2Climb.API.Controllers
             
             return Ok(result.Resource);
         }
-
-        /*
-         //TODO: Develop the put method
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(int id, [FromBody] SaveAgencyReviewResource resource)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState.GetErrorMessages());
-
-            var agencyReview = _mapper.Map<SaveAgencyReviewResource, AgencyReview>(resource);
-            var result = await _agencyReviewService.UpdateAsync(agencyReview);
-
-            if (!result.Success)
-                return BadRequest(result.Message);
-
-            //TODO: Convert the response from AgencyReview to AgencyReviewResource
-            
-            return Ok(result.Resource);
-        }
-        */
     }
 }
