@@ -46,12 +46,12 @@ namespace Go2Climb.API.Persistence.Repositories
 
         public void Update(Service service)
         {
-            _context.Services.Remove(service);
+            _context.Services.Update(service);
         }
 
         public void Remove(Service service)
         {
-            _context.Services.Update(service);
+            _context.Services.Remove(service);
         }
     }
 }

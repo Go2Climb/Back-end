@@ -1224,34 +1224,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SALOME\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet": {}
+    "C:\\Users\\sebas\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SALOME\\Documents\\GitHub\\Back-end\\Go2Climb.API\\Go2Climb.API\\Go2Climb.API.csproj",
+      "projectUniqueName": "E:\\web\\Back-End\\Go2Climb.API\\Go2Climb.API\\Go2Climb.API.csproj",
       "projectName": "Go2Climb.API",
-      "projectPath": "C:\\Users\\SALOME\\Documents\\GitHub\\Back-end\\Go2Climb.API\\Go2Climb.API\\Go2Climb.API.csproj",
-      "packagesPath": "C:\\Users\\SALOME\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SALOME\\Documents\\GitHub\\Back-end\\Go2Climb.API\\Go2Climb.API\\obj\\",
+      "projectPath": "E:\\web\\Back-End\\Go2Climb.API\\Go2Climb.API\\Go2Climb.API.csproj",
+      "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
+      "outputPath": "E:\\web\\Back-End\\Go2Climb.API\\Go2Climb.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\SALOME\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1317,7 +1311,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

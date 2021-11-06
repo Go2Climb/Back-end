@@ -5,7 +5,6 @@ using Go2Climb.API.Domain.Models;
 using Go2Climb.API.Domain.Repositories;
 using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Domain.Services.Communication;
-using Go2Climb.API.Persistence.Repositories;
 
 namespace Go2Climb.API.Services
 {
@@ -25,9 +24,13 @@ namespace Go2Climb.API.Services
             return await _agencyRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Agency>> ListById(int id)
+        public async Task<AgencyResponse> GetById(int id)
         {
-            return await _agencyRepository.ListById(id);
+            var existingAgency = _agencyRepository.FindById(id);
+            if (existingAgency.Result == null)
+                return new AgencyResponse("The agency does not exist.");
+            
+            return new AgencyResponse(existingAgency.Result);
         }
 
         public async Task<IEnumerable<Agency>> ListByName(string name)

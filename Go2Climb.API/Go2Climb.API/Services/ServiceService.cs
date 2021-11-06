@@ -26,9 +26,13 @@ namespace Go2Climb.API.Services
             return await _serviceRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Service>> ListById(int id)
+        public async Task<ServiceResponse> GetById(int id)
         {
-            return await _serviceRepository.ListById(id);
+            var existingService = _serviceRepository.FindById(id);
+            if (existingService.Result == null)
+                return new ServiceResponse("The service does not exist.");
+            
+            return new ServiceResponse(existingService.Result);
         }
 
         public async Task<IEnumerable<Service>> ListByName(string name)

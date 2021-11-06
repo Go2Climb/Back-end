@@ -27,7 +27,7 @@ namespace Go2Climb.API.Services
         {
             var existingAgencyReview = _agencyReviewRepository.FindByIdAsync(id);
             if (existingAgencyReview.Result == null)
-                return new AgencyReviewResponse("The agency review is not exist.");
+                return new AgencyReviewResponse("The agency review does not exist.");
             
             return new AgencyReviewResponse(existingAgencyReview.Result);
         }

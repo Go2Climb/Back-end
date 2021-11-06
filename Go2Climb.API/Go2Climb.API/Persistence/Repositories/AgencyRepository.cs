@@ -46,7 +46,7 @@ namespace Go2Climb.API.Persistence.Repositories
 
         public void Remove(Agency agency)
         {
-            _context.Agencies.Update(agency);
+            _context.Agencies.Remove(agency);
         }
     }
 }

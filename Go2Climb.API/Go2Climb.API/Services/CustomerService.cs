@@ -34,7 +34,7 @@ namespace Go2Climb.API.Services
             }
             catch (Exception e)
             {
-                return new CustomerResponse($"An error occurred while save the customer: {e.Message}");
+                return new CustomerResponse($"An error occurred while saving the customer: {e.Message}");
             }
         }
 
