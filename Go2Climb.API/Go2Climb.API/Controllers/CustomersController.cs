@@ -33,7 +33,7 @@ namespace Go2Climb.API.Controllers
         public async Task<CustomerResource> GetByIdAsync(int id)
         {
             var customer = await _customerService.FindById(id);
-            var resources = _mapper.Map<Customer, CustomerResource>(customer.Customer);
+            var resources = _mapper.Map<Customer, CustomerResource>(customer.Resource);
             return resources;
         }
 
@@ -50,7 +50,7 @@ namespace Go2Climb.API.Controllers
             if (!result.Success)
                 return BadRequest(result.Message);
 
-            var customerResource = _mapper.Map<Customer, CustomerResource>(result.Customer);
+            var customerResource = _mapper.Map<Customer, CustomerResource>(result.Resource);
 
             return Ok(customerResource);
         }
@@ -68,7 +68,7 @@ namespace Go2Climb.API.Controllers
             if (!result.Success)
                 return BadRequest(result.Message);
 
-            var customerResource = _mapper.Map<Customer, CustomerResource>(result.Customer);
+            var customerResource = _mapper.Map<Customer, CustomerResource>(result.Resource);
 
             return Ok(customerResource);
         }
@@ -81,7 +81,7 @@ namespace Go2Climb.API.Controllers
             if (!result.Success)
                 return BadRequest(result.Message);
 
-            var customerResource = _mapper.Map<Customer, CustomerResource>(result.Customer);
+            var customerResource = _mapper.Map<Customer, CustomerResource>(result.Resource);
 
             return Ok(customerResource);
         }
