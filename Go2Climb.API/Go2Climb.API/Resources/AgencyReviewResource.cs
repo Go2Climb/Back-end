@@ -1,6 +1,6 @@
-﻿namespace Go2Climb.API.Domain.Models
+﻿namespace Go2Climb.API.Resources
 {
-    public class AgencyReview
+    public class AgencyReviewResource
     {
         public int Id { get; set; }
         public string Date { get; set; }
@@ -10,10 +10,7 @@
         public double QualityScore { get; set; }
         public double CostScore { get; set; }
         
-        //Relationships
-        public int AgencyId { get; set; }
-    //  public Agency Agency { get; set; }
-        public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        //  public AgencyResource Agency { get; set; }
+        //  public CustomerResource Customer { get; set; }
     }
 }

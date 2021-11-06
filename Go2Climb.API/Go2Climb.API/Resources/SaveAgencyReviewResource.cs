@@ -1,19 +1,30 @@
-﻿namespace Go2Climb.API.Domain.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Go2Climb.API.Resources
 {
-    public class AgencyReview
+    public class SaveAgencyReviewResource
     {
-        public int Id { get; set; }
+        [Required]
         public string Date { get; set; }
+        [Required]
+        [MaxLength(200)]
         public string Comment { get; set; }
+        [Required]
+        [Range(0, 5)]
         public double ProfessionalismScore { get; set; }
+        [Required]
+        [Range(0, 5)]
         public double SecurityScore { get; set; }
+        [Required]
+        [Range(0, 5)]
         public double QualityScore { get; set; }
+        [Required]
+        [Range(0, 5)]
         public double CostScore { get; set; }
         
-        //Relationships
+        [Required]
         public int AgencyId { get; set; }
-    //  public Agency Agency { get; set; }
+        [Required]
         public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
     }
 }

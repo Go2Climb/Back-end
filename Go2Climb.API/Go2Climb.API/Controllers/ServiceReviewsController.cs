@@ -11,30 +11,30 @@ namespace Go2Climb.API.Controllers
 {
     [ApiController]
     [Route("/api/v1/[controller]")]
-    public class AgencyReviewsController : ControllerBase
+    public class ServiceReviewsController : ControllerBase
     {
-        private readonly IAgencyReviewService _agencyReviewService;
+        private readonly IServiceReviewService _serviceReviewService;
         private readonly IMapper _mapper;
 
-        public AgencyReviewsController(IAgencyReviewService agencyReviewService, IMapper mapper)
+        public ServiceReviewsController(IServiceReviewService serviceReviewService, IMapper mapper)
         {
-            _agencyReviewService = agencyReviewService;
+            _serviceReviewService = serviceReviewService;
             _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<AgencyReview>> GetAllAsync()
+        public async Task<IEnumerable<ServiceReview>> GetAllAsync()
         {
-            var agencyReviews = await _agencyReviewService.ListAsync();
-            //TODO: RETURN AGENCY REVIEW RESOURCE
-            return agencyReviews;
+            var serviceReview = await _serviceReviewService.ListAsync();
+            //TODO: RETURN SERVICE REVIEW RESOURCE
+            return serviceReview;
         }
-
+        
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var result = await _agencyReviewService.GetByIdAsync(id);
-        
+            var result = await _serviceReviewService.GetByIdAsync(id);
+            
             if (!result.Success)
                 return BadRequest(result.Message);
             
@@ -42,13 +42,13 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] SaveAgencyReviewResource resource)
+        public async Task<IActionResult> PostAsync([FromBody] SaveServiceReviewResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
 
-            var agencyReview = _mapper.Map<SaveAgencyReviewResource, AgencyReview>(resource);
-            var result = await _agencyReviewService.SaveAsync(agencyReview);
+            var serviceReview = _mapper.Map<SaveServiceReviewResource, ServiceReview>(resource);
+            var result = await _serviceReviewService.SaveAsync(serviceReview);
 
             if (!result.Success)
                 return BadRequest(result.Message);
@@ -61,7 +61,7 @@ namespace Go2Climb.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
-            var result = await _agencyReviewService.DeleteAsync(id);
+            var result = await _serviceReviewService.DeleteAsync(id);
 
             if (!result.Success)
                 return BadRequest(result.Message);
