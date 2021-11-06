@@ -33,6 +33,9 @@ namespace Go2Climb.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddRouting(options => options.LowercaseUrls = true);
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Go2Climb.API", Version = "v1"});

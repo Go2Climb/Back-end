@@ -1,4 +1,5 @@
 ﻿using Go2Climb.API.Domain.Models;
+using Go2Climb.API.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Go2Climb.API.Persistence.Contexts
@@ -76,6 +77,7 @@ namespace Go2Climb.API.Persistence.Contexts
                 new Customer { Id = 3, Name = "Celia", LastName = "Jimenez Garcia", Email = "celia@gmail.com", Password = "12345", PhoneNumber = "977453221" }
             );
             
+            builder.UseSnakeCaseNamingConventions();
         }
         
     }
