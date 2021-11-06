@@ -12,6 +12,6 @@ namespace Go2Climb.API.Domain.Models
         public string PhoneNumber { get; set; }
         public IList<AgencyReview> AgencyReviews { get; set; } = new List<AgencyReview>();
         public IList<ServiceReview> ServiceReviews { get; set; } = new List<ServiceReview>();
-        public IList<HideService> HideServices { get; set; } = new List<HideService>();
+        public IList<HiredService> HideServices { get; set; } = new List<HiredService>();
     }
 }

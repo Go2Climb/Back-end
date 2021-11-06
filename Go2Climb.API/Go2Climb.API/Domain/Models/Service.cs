@@ -18,6 +18,6 @@ namespace Go2Climb.API.Domain.Models
         // Relationships
         
         public int AgencyId { get; set; }
-        public Agency Agency { get; set; }
+    //  public Agency Agency { get; set; }
     }
 }
