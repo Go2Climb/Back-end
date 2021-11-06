@@ -9,6 +9,7 @@ namespace Go2Climb.API.Mapping
         public ResourceToModelProfile()
         {
             CreateMap<SaveCustomerResourse, Customer>();
+            CreateMap<SaveHiredServiceResource, HiredService>();
         }
     }
 }
