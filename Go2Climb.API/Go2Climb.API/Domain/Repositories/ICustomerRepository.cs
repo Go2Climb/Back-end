@@ -8,5 +8,8 @@ namespace Go2Climb.API.Domain.Repositories
     {
         Task<IEnumerable<Customer>> ListAsync();
         Task AddAsync(Customer customer);
+        Task<Customer> FindByIdAsync(int id);
+        void Update(Customer customer);
+        void Remove(Customer customer);
     }
 }

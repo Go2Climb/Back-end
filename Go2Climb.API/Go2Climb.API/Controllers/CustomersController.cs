@@ -28,6 +28,14 @@ namespace Go2Climb.API.Controllers
             var resources = _mapper.Map<IEnumerable<Customer>, IEnumerable<CustomerResource>>(customers);
             return resources;
         }
+        
+        [HttpGet("{id}")]
+        public async Task<CustomerResource> GetByIdAsync(int id)
+        {
+            var customer = await _customerService.FindById(id);
+            var resources = _mapper.Map<Customer, CustomerResource>(customer.Customer);
+            return resources;
+        }
 
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] SaveCustomerResourse resource)
@@ -39,6 +47,37 @@ namespace Go2Climb.API.Controllers
             
             var result = await _customerService.SaveAsync(customer);
 
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            var customerResource = _mapper.Map<Customer, CustomerResource>(result.Customer);
+
+            return Ok(customerResource);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutAsync(int id, [FromBody] SaveCustomerResourse resource)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState.GetErrorMessages());
+            
+            var customer = _mapper.Map<SaveCustomerResourse, Customer>(resource);
+
+            var result = await _customerService.UpdateAsync(id, customer);
+            
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            var customerResource = _mapper.Map<Customer, CustomerResource>(result.Customer);
+
+            return Ok(customerResource);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> RemoteAsync(int id)
+        {
+            var result = await _customerService.DeleteAsync(id);
+            
             if (!result.Success)
                 return BadRequest(result.Message);
 

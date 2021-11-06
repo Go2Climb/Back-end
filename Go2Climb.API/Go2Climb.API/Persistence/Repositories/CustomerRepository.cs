@@ -22,5 +22,20 @@ namespace Go2Climb.API.Persistence.Repositories
         {
             await _context.Customers.AddAsync(customer);
         }
+
+        public async Task<Customer> FindByIdAsync(int id)
+        {
+            return await _context.Customers.FindAsync(id);
+        }
+
+        public void Update(Customer customer)
+        {
+            _context.Customers.Update(customer);
+        }
+
+        public void Remove(Customer customer)
+        {
+            _context.Customers.Remove(customer);
+        }
     }
 }

@@ -8,6 +8,10 @@ namespace Go2Climb.API.Domain.Services
     public interface ICustomerService
     {
         Task<IEnumerable<Customer>> ListAsync();
-        Task<SaveCustomerResponse> SaveAsync(Customer customer);
+        Task<CustomerResponse> SaveAsync(Customer customer);
+        Task<CustomerResponse> FindById(int id);
+        Task<CustomerResponse> UpdateAsync(int id, Customer customer);
+        Task<CustomerResponse> DeleteAsync(int id);
+
     }
 }
