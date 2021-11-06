@@ -49,8 +49,6 @@ namespace Go2Climb.API.Persistence.Contexts
 
             //Seed Data
             //TODO: add test data to Service reviews
-
-
         }
         
     }

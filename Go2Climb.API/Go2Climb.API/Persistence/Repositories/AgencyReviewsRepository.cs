@@ -18,5 +18,10 @@ namespace Go2Climb.API.Persistence.Repositories
         {
             return await _context.AgencyReviews.ToListAsync();
         }
+
+        public async Task AddAsync(AgencyReview agencyReview)
+        {
+            await _context.AgencyReviews.AddAsync(agencyReview);
+        }
     }
 }

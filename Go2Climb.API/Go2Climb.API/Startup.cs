@@ -41,12 +41,16 @@ namespace Go2Climb.API
             //Configure In-Memory Database
             services.AddDbContext<AppDbContext>(options =>
             {
-                options.UseInMemoryDatabase("go2climb-api");
+                options.UseInMemoryDatabase("go2climb-api-in-memory");
             });
             
             //Dependency Injection Rules
             services.AddScoped<IAgencyReviewRepository, AgencyReviewsRepository>();
             services.AddScoped<IAgencyReviewService, AgencyReviewService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            
+            //AutoMapper Dependency Injection
+            services.AddAutoMapper(typeof(Startup));
 
         }
 

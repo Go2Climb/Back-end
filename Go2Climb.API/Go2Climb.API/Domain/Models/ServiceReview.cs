@@ -8,9 +8,9 @@
         public double Score { get; set; }
         
         //Relationships
-        public string ServiceId { get; set; } 
-        //  public Service service { get; set; }
-        public string CustomerId { get; set; }
-        //  public Customer Customer { get; set; }
+        public int ServiceId { get; set; } 
+    //  public Service Service { get; set; }
+        public int CustomerId { get; set; }
+    //  public Customer Customer { get; set; }
     }
 }
