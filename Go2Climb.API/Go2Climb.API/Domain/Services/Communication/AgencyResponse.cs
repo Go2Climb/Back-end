@@ -2,17 +2,17 @@
 
 namespace Go2Climb.API.Domain.Services.Communication
 {
-    public class AgencyResponse : BaseResponse
+    public class AgencyResponse : BaseResponse<Agency>
     {
-        public Agency Agency { get; private set; }
-        public AgencyResponse(bool success, string message, Agency agency) : base(success, message)
+        //UNHAPPY
+        public AgencyResponse(string message) : base(message)
         {
-            Agency = agency;
+            
         }
-        
-        public AgencyResponse(Agency agency) : this(true,string.Empty, agency) {}
-        
-        public AgencyResponse(string message) : this(false,message,null){}
-        
+        //HAPPY
+        public AgencyResponse(Agency resource) : base(resource)
+        {
+            
+        }
     }
 }

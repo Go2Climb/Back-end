@@ -2,16 +2,17 @@
 
 namespace Go2Climb.API.Domain.Services.Communication
 {
-    public class ActivityResponse : BaseResponse
+    public class ActivityResponse : BaseResponse<Activity>
     {
-        public Activity Activity { get; private set; }
-
-        public ActivityResponse(bool success, string message, Activity activity) : base(success, message)
+        //UNHAPPY
+        public ActivityResponse(string message) : base(message)
         {
-            Activity = activity;
+            
         }
-        
-        public ActivityResponse(Activity activity) : this(true,string.Empty, activity) {}
-        public ActivityResponse(string message) : this(false, message, null) {}
+        //HAPPY
+        public ActivityResponse(Activity resource) : base(resource)
+        {
+            
+        }
     }
 }
