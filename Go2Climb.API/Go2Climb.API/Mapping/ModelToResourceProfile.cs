@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Go2Climb.API.Domain.Models;
 using Go2Climb.API.Domain.Services.Communication;
 using Go2Climb.API.Resources;
@@ -9,9 +9,15 @@ namespace Go2Climb.API.Mapping
     {
         public ModelToResourceProfile()
         {
+
+            CreateMap<Activity, ActivityResource>();
+            CreateMap<Agency, AgencyResource>();
+            CreateMap<Service, ServiceResource>();
+
             CreateMap<Customer, CustomerResource>();
             CreateMap<HiredService, HiredServiceResource>();
             CreateMap<AgencyReview, AgencyReviewResponse>();
+
         }
     }
 }

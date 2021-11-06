@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace Go2Climb.API.Domain.Models
+﻿namespace Go2Climb.API.Resources
 {
-    public class Service
+    public class ServiceResource
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public short Score { get; set; }
         public int Price { get; set; }
@@ -14,10 +11,6 @@ namespace Go2Climb.API.Domain.Models
         public string Photos { get; set; }
         public string Description { get; set; }
         public bool IsOffer { get; set; }
-        
-        // Relationships
-        public List<Activity> Activities { get; set; }
-        public int AgencyId { get; set; }
-    //  public Agency Agency { get; set; }
+        public AgencyResource Agency { get; set; }
     }
 }

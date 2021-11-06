@@ -1,5 +1,6 @@
 ﻿namespace Go2Climb.API.Domain.Services.Communication
 {
+
     public abstract class BaseResponse<T>
     {
         public bool Success { get; private set; }
@@ -19,5 +20,6 @@
             Message = string.Empty;
             Resource = resource;
         }
+
     }
 }
