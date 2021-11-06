@@ -49,7 +49,7 @@ namespace Go2Climb.API.Services
             }
             catch (Exception e)
             {
-                return new AgencyReviewResponse($"An error occurred while saving the product: {e.Message}");
+                return new AgencyReviewResponse($"An error occurred while saving the agency review: {e.Message}");
             }
         }
 

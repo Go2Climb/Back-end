@@ -47,6 +47,9 @@ namespace Go2Climb.API
             //Dependency Injection Rules
             services.AddScoped<IAgencyReviewRepository, AgencyReviewsRepository>();
             services.AddScoped<IAgencyReviewService, AgencyReviewService>();
+            
+            services.AddScoped<IServiceReviewRepository, ServiceReviewsRepository>();
+            services.AddScoped<IServiceReviewService, ServiceReviewService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             
             //AutoMapper Dependency Injection

@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Go2Climb.API.Domain.Models;
+using Go2Climb.API.Domain.Repositories;
+using Go2Climb.API.Domain.Services;
+using Go2Climb.API.Domain.Services.Communication;
+
+namespace Go2Climb.API.Services
+{
+    public class ServiceReviewService : IServiceReviewService
+    {
+        private readonly IServiceReviewRepository _serviceReviewRepository;
+        private readonly IUnitOfWork _unitOfWork;
+
+        public ServiceReviewService(IServiceReviewRepository serviceReviewRepository, IUnitOfWork unitOfWork)
+        {
+            _serviceReviewRepository = serviceReviewRepository;
+            _unitOfWork = unitOfWork;
+        }
+
+        public async Task<IEnumerable<ServiceReview>> ListAsync()
+        {
+            return await _serviceReviewRepository.ListAsync();
+        }
+
+        public async Task<ServiceReview> GetByIdAsync(int id)
+        {
+            return await _serviceReviewRepository.FindByIdAsync(id);
+        }
+        
+        public async Task<ServiceReviewResponse> SaveAsync(ServiceReview serviceReview)
+        {
+            /*
+            TODO: Validate CustomerId
+            var existingCustomer = _customerRepository.FindByIdAsync(serviceReview.CustomerId);
+            if (existingCustomer == null)
+                return new ServiceReviewResponse("Customer is not exist.");
+            TODO: Validate ServiceId
+            var exitingService = _serviceRepository.FindByIdAsync(serviceReview.ServiceId);
+            if (exitingAgency == null)
+                return new ServiceReviewResponse("Service is not exist.");
+             */
+            try
+            {
+                await _serviceReviewRepository.AddAsync(serviceReview);
+                await _unitOfWork.CompleteAsync();
+
+                return new ServiceReviewResponse(serviceReview);
+            }
+            catch (Exception e)
+            {
+                return new ServiceReviewResponse($"An error occurred while saving the service review: {e.Message}");
+            }
+        }
+
+        public async Task<ServiceReviewResponse> DeleteAsync(int id)
+        {
+            //Validate ServiceReview
+            var existingServiceReview = await _serviceReviewRepository.FindByIdAsync(id);
+
+            if (existingServiceReview == null)
+                return new ServiceReviewResponse("Service review not found.");
+
+            try
+            {
+                _serviceReviewRepository.Remove(existingServiceReview);
+                await _unitOfWork.CompleteAsync();
+
+                return new ServiceReviewResponse(existingServiceReview);
+            }
+            catch (Exception e)
+            {
+                return new ServiceReviewResponse($"An error occurred while deleting the service review: {e.Message}");
+            }
+        }
+    }
+}

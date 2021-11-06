@@ -10,12 +10,16 @@ namespace Go2Climb.API.Resources
         [MaxLength(200)]
         public string Comment { get; set; }
         [Required]
+        [Range(0, 5)]
         public double ProfessionalismScore { get; set; }
         [Required]
+        [Range(0, 5)]
         public double SecurityScore { get; set; }
         [Required]
+        [Range(0, 5)]
         public double QualityScore { get; set; }
         [Required]
+        [Range(0, 5)]
         public double CostScore { get; set; }
         
         [Required]

@@ -77,7 +77,12 @@ namespace Go2Climb.API.Persistence.Contexts
             //TODO: add the relationship with customer and agency to Service reviews
 
             //Seed Data
-            //TODO: add test data to Service reviews
+            builder.Entity<ServiceReview>().HasData
+            (
+                new ServiceReview {Id = 1, Date = "January 2021", Comment = "I love this agency <3.", Score = 5},
+                new ServiceReview {Id = 2, Date = "February 2021", Comment = "I hate this bro...", Score = 1},
+                new ServiceReview {Id = 3, Date = "March 2021", Comment = "I want to travel, but I cannot because there is a pandemy in the world...", Score = 3}
+            );
         }
         
     }

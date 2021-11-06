@@ -34,3 +34,4 @@ C:\Users\ALEJANDRO\Desktop\5TO\ProgramacionWeb\Back-end\Go2Climb.API\Go2Climb.AP
 C:\Users\ALEJANDRO\Desktop\5TO\ProgramacionWeb\Back-end\Go2Climb.API\Go2Climb.API\obj\Debug\net5.0\ref\Go2Climb.API.dll
 C:\Users\ALEJANDRO\Desktop\5TO\ProgramacionWeb\Back-end\Go2Climb.API\Go2Climb.API\obj\Debug\net5.0\Go2Climb.API.pdb
 C:\Users\ALEJANDRO\Desktop\5TO\ProgramacionWeb\Back-end\Go2Climb.API\Go2Climb.API\obj\Debug\net5.0\Go2Climb.API.genruntimeconfig.cache
+C:\Users\ALEJANDRO\Desktop\5TO\ProgramacionWeb\Back-end\Go2Climb.API\Go2Climb.API\obj\Debug\net5.0\Go2Climb.API.csproj.CopyComplete
