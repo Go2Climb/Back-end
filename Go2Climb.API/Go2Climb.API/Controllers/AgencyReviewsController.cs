@@ -28,7 +28,16 @@ namespace Go2Climb.API.Controllers
             var agencyReview = await _agencyReviewService.ListAsync();
             return agencyReview;
         }
-        
+
+        [HttpGet("{id}")]
+        public async Task<AgencyReview> GetByIdAsync(int id)
+        {
+            var agencyReview = await _agencyReviewService.GetByIdAsync(id);
+            //TODO: Unhappy response
+
+            return agencyReview;
+        }
+
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] SaveAgencyReviewResource resource)
         {
@@ -40,9 +49,43 @@ namespace Go2Climb.API.Controllers
 
             if (!result.Success)
                 return BadRequest(result.Message);
+            
+            //TODO: Convert the response from AgencyReview to AgencyReviewResource
 
             return Ok(result.Resource);
         }
-        
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            var result = await _agencyReviewService.DeleteAsync(id);
+
+            if (!result.Success)
+                return BadRequest(result.Message);
+            
+            //TODO: Convert the response from AgencyReview to AgencyReviewResource
+            
+            return Ok(result.Resource);
+        }
+
+        /*
+         //TODO: Develop the put method
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutAsync(int id, [FromBody] SaveAgencyReviewResource resource)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState.GetErrorMessages());
+
+            var agencyReview = _mapper.Map<SaveAgencyReviewResource, AgencyReview>(resource);
+            var result = await _agencyReviewService.UpdateAsync(agencyReview);
+
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            //TODO: Convert the response from AgencyReview to AgencyReviewResource
+            
+            return Ok(result.Resource);
+        }
+        */
     }
 }

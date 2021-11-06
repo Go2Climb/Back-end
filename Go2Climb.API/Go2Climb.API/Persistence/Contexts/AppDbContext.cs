@@ -7,6 +7,7 @@ namespace Go2Climb.API.Persistence.Contexts
     {
         public DbSet<AgencyReview> AgencyReviews { get; set; }
         public DbSet<ServiceReview> ServiceReviews { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         
         public AppDbContext(DbContextOptions options) : base(options)
         {}
@@ -14,6 +15,34 @@ namespace Go2Climb.API.Persistence.Contexts
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            
+            //Constrains
+            builder.Entity<Customer>().ToTable("Customers");
+            builder.Entity<Customer>().HasKey(p => p.Id);
+            builder.Entity<Customer>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Customer>().Property(p => p.Name).IsRequired().HasMaxLength(50);
+            builder.Entity<Customer>().Property(p => p.LastName).IsRequired().HasMaxLength(75);
+            builder.Entity<Customer>().Property(p => p.Email).IsRequired().HasMaxLength(250);
+            builder.Entity<Customer>().Property(p => p.Password).IsRequired().HasMaxLength(25);
+            builder.Entity<Customer>().Property(p => p.PhoneNumber).IsRequired().HasMaxLength(11);
+
+            //Relationship
+            builder.Entity<Customer>()
+                .HasMany(p => p.AgencyReviews)
+                .WithOne(p => p.Customer)
+                .HasForeignKey(p => p.CustomerId);
+            builder.Entity<Customer>()
+                .HasMany(p => p.ServiceReviews)
+                .WithOne(p => p.Customer)
+                .HasForeignKey(p => p.CustomerId);
+
+            //Seed Data
+            builder.Entity<Customer>().HasData
+            (
+                new Customer { Id = 1, Name = "Heber", LastName = "Cordova Jimenez", Email = "hbcordova10@gmail.com", Password = "12345", PhoneNumber = "902952757" },
+                new Customer { Id = 2, Name = "Maria", LastName = "Cordova Jimenez", Email = "iepvcordova@gmail.com", Password = "67890", PhoneNumber = "931015430" },
+                new Customer { Id = 3, Name = "Celia", LastName = "Jimenez Garcia", Email = "celia@gmail.com", Password = "12345", PhoneNumber = "977453221" }
+            );
             
             //Constrains
             builder.Entity<AgencyReview>().ToTable("AgencyReviews");

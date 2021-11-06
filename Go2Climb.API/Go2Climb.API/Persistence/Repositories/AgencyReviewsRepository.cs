@@ -23,5 +23,16 @@ namespace Go2Climb.API.Persistence.Repositories
         {
             await _context.AgencyReviews.AddAsync(agencyReview);
         }
+
+        public async Task<AgencyReview> FindByIdAsync(int id)
+        {
+            return await _context.AgencyReviews
+                .FirstOrDefaultAsync(p => p.Id == id);
+        }
+
+        public void Remove(AgencyReview agencyReview)
+        {
+            _context.AgencyReviews.Remove(agencyReview);
+        }
     }
 }

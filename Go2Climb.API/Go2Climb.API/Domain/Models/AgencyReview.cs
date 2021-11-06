@@ -14,6 +14,6 @@
         public int AgencyId { get; set; }
     //  public Agency Agency { get; set; }
         public int CustomerId { get; set; }
-    //  public Customer Customer { get; set; }
+        public Customer Customer { get; set; }
     }
 }
