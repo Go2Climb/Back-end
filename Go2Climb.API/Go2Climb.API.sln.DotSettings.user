@@ -1,0 +1,8 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=45a40d94_002D18e0_002D47a1_002Dbeca_002D5776e9cc3bfa/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AddServiceToAgencyFeature" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::AD56B025-DF1D-47ED-B2C4-AC5356A60FDF::net5.0::Go2Climb.API.Tests.Features.AddServiceToAgencyFeature&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AD56B025-DF1D-47ED-B2C4-AC5356A60FDF::net5.0::Go2Climb.API.Tests.Features.AddActivityToServiceFeature&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AD56B025-DF1D-47ED-B2C4-AC5356A60FDF::net5.0::Go2Climb.API.Tests.Features.AddServiceReviewToServiceFeature&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
