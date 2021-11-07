@@ -40,14 +40,14 @@ namespace Go2Climb.API.Services
             return await _serviceRepository.ListByName(name);
         }
 
-        public async Task<ServiceResponse> SaveAsync(Service service, int agencyId)
+        public async Task<ServiceResponse> SaveAsync(Service service)
         {
-            var existingAgency = await _agencyRepository.FindById(agencyId);
+            /*var existingAgency = await _agencyRepository.FindById(agencyId);
             if (existingAgency == null)
             {
                 return new ServiceResponse("Service not found");
             }
-            service.Agency = existingAgency;
+            service.Agency = existingAgency;*/
             try
             {
                 await _serviceRepository.AddAsync(service);

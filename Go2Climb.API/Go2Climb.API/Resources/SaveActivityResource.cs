@@ -10,5 +10,7 @@ namespace Go2Climb.API.Resources
         [Required]
         [MaxLength(50)]
         public string Description { get; set; }
+        [Required]
+        public int ServiceId { get; set; }
     }
 }

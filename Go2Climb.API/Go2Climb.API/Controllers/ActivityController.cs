@@ -42,13 +42,13 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] SaveActivityResource resource, int serviceId)
+        public async Task<IActionResult> PostAsync([FromBody] SaveActivityResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
 
             var activity = _mapper.Map<SaveActivityResource, Activity>(resource);
-            var result = await _activityService.SaveAsync(activity, serviceId);
+            var result = await _activityService.SaveAsync(activity);
 
             if (!result.Success)
                 return BadRequest(result.Message);
