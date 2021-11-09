@@ -10,7 +10,7 @@
         public double QualityScore { get; set; }
         public double CostScore { get; set; }
         
-        //  public AgencyResource Agency { get; set; }
+        public AgencyResource Agency { get; set; }
         //  public CustomerResource Customer { get; set; }
     }
 }

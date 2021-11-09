@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VIBwBMkFwyNsYwyGA/6va0wnRWaiGw59p2g1g7j/ttEmVlRj8AThWcVs+6OuA2eP1FEjE/t5Ns/Bf+WuPEFCAw==",
+  "dgSpecHash": "9s6M2ffPE+8JkVexpT8vBQ/05ZSOnxQeU5ntY2O/ivN6M5prTS6HldoPANkVY5dbcL9D8ZNcWuUPTFFhjr8Asw==",
   "success": true,
   "projectFilePath": "C:\\Users\\SALOME\\Documents\\GitHub\\Back-end\\Go2Climb.API\\Go2Climb.API\\Go2Climb.API.csproj",
   "expectedPackageFiles": [
@@ -28,8 +28,9 @@
     "C:\\Users\\SALOME\\.nuget\\packages\\microsoft.packaging.tools\\1.0.0-preview1-25301-01\\microsoft.packaging.tools.1.0.0-preview1-25301-01.nupkg.sha512",
     "C:\\Users\\SALOME\\.nuget\\packages\\netstandard.library\\2.0.0-preview1-25301-01\\netstandard.library.2.0.0-preview1-25301-01.nupkg.sha512",
     "C:\\Users\\SALOME\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
-    "C:\\Users\\SALOME\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
-    "C:\\Users\\SALOME\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\SALOME\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.2.3\\swashbuckle.aspnetcore.annotations.6.2.3.nupkg.sha512",
+    "C:\\Users\\SALOME\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\SALOME\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
     "C:\\Users\\SALOME\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
     "C:\\Users\\SALOME\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\SALOME\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",

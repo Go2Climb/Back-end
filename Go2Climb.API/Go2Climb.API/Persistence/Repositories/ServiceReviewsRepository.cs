@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Go2Climb.API.Domain.Models;
 using Go2Climb.API.Domain.Repositories;
@@ -17,6 +18,11 @@ namespace Go2Climb.API.Persistence.Repositories
         public async Task<IEnumerable<ServiceReview>> ListAsync()
         {
             return await _context.ServiceReviews.ToListAsync();
+        }
+
+        public async Task<IEnumerable<ServiceReview>> ListByServiceId(int serviceId)
+        {
+            return await _context.ServiceReviews.Where(p => p.ServiceId == serviceId).Include(p => p.Service).ToListAsync();
         }
 
         public async Task AddAsync(ServiceReview serviceReview)

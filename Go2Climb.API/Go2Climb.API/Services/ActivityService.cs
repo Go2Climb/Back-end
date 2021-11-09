@@ -37,7 +37,7 @@ namespace Go2Climb.API.Services
 
         public async Task<IEnumerable<Activity>> ListByServiceIdAsync(int serviceId)
         {
-            return await _activityRepository.ListById(serviceId);
+            return await _activityRepository.ListByServiceId(serviceId);
         }
 
         public async Task<ActivityResponse> SaveAsync(Activity activity)

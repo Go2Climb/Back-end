@@ -40,6 +40,11 @@ namespace Go2Climb.API.Services
             return await _serviceRepository.ListByName(name);
         }
 
+        public async Task<IEnumerable<Service>> ListByAgencyIdAsync(int agencyId)
+        {
+            return await _serviceRepository.ListByAgencyId(agencyId);
+        }
+
         public async Task<ServiceResponse> SaveAsync(Service service)
         {
             /*var existingAgency = await _agencyRepository.FindById(agencyId);
