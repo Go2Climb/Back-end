@@ -14,6 +14,7 @@ C:\Users\SALOME\Documents\GitHub\Back-end\Go2Climb.API\Go2Climb.API\obj\Release\
 C:\Users\SALOME\Documents\GitHub\Back-end\Go2Climb.API\Go2Climb.API\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Relational.Design.dll
 C:\Users\SALOME\Documents\GitHub\Back-end\Go2Climb.API\Go2Climb.API\obj\Release\net5.0\PubTmp\Out\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\SALOME\Documents\GitHub\Back-end\Go2Climb.API\Go2Climb.API\obj\Release\net5.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\SALOME\Documents\GitHub\Back-end\Go2Climb.API\Go2Climb.API\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Annotations.dll
 C:\Users\SALOME\Documents\GitHub\Back-end\Go2Climb.API\Go2Climb.API\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\SALOME\Documents\GitHub\Back-end\Go2Climb.API\Go2Climb.API\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\SALOME\Documents\GitHub\Back-end\Go2Climb.API\Go2Climb.API\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
