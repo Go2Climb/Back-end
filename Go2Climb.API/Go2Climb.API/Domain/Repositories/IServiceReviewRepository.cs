@@ -7,6 +7,7 @@ namespace Go2Climb.API.Domain.Repositories
     public interface IServiceReviewRepository
     {
         Task<IEnumerable<ServiceReview>> ListAsync();
+        Task<IEnumerable<ServiceReview>> ListByServiceId(int serviceId);
         Task<ServiceReview> FindByIdAsync(int id);
         //TODO: Implement the FindByService method
     //  Task<IEnumerable<ServiceReview>> FindByServiceId(int serviceId);

@@ -16,7 +16,8 @@ namespace Go2Climb.API.Domain.Models
         public bool IsOffer { get; set; }
         
         // Relationships
-        public List<Activity> Activities { get; set; }
+        public IList<Activity> Activities { get; set; }
+        public IList<ServiceReview> ServiceReviews { get; set; }
         public int AgencyId { get; set; }
         public Agency Agency { get; set; }
     }

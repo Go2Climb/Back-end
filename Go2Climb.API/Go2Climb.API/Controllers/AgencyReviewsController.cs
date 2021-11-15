@@ -6,9 +6,11 @@ using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Extensions;
 using Go2Climb.API.Resources;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Go2Climb.API.Controllers
 {
+    [Produces("application/json")]
     [ApiController]
     [Route("/api/v1/[controller]")]
     public class AgencyReviewsController : ControllerBase
@@ -21,7 +23,10 @@ namespace Go2Climb.API.Controllers
             _agencyReviewService = agencyReviewService;
             _mapper = mapper;
         }
-
+        [SwaggerOperation(
+            Summary = "Get All AgencyReviews",
+            Description = "Get All AgencyReviews already stored",
+            Tags = new[] {"AgencyReviews"})]
         [HttpGet]
         public async Task<IEnumerable<AgencyReview>> GetAllAsync()
         {

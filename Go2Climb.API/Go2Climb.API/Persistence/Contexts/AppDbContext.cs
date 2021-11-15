@@ -68,8 +68,8 @@ namespace Go2Climb.API.Persistence.Contexts
             //Seed Data
             builder.Entity<AgencyReview>().HasData
             (
-                new AgencyReview {Id = 1, Date = "September 2021", Comment = "I had a good experience with this service.", ProfessionalismScore = 5, SecurityScore = 5, QualityScore = 5, CostScore = 5 },
-                new AgencyReview {Id = 2, Date = "December 2020", Comment = "It is not my first time with TravelNew, they never disappoint me", ProfessionalismScore = 4, SecurityScore = 3, QualityScore = 4.5, CostScore = 3}
+                new AgencyReview {AgencyId = 1, Id = 1, Date = "September 2021", Comment = "I had a good experience with this service.", ProfessionalismScore = 5, SecurityScore = 5, QualityScore = 5, CostScore = 5 },
+                new AgencyReview {AgencyId = 2, Id = 2, Date = "December 2020", Comment = "It is not my first time with TravelNew, they never disappoint me", ProfessionalismScore = 4, SecurityScore = 3, QualityScore = 4.5, CostScore = 3}
             );
             
             //Constrains
@@ -86,9 +86,9 @@ namespace Go2Climb.API.Persistence.Contexts
             //Seed Data
             builder.Entity<ServiceReview>().HasData
             (
-                new ServiceReview {Id = 1, Date = "January 2021", Comment = "I love this agency <3.", Score = 5},
-                new ServiceReview {Id = 2, Date = "February 2021", Comment = "I hate this bro...", Score = 1},
-                new ServiceReview {Id = 3, Date = "March 2021", Comment = "I want to travel, but I cannot because there is a pandemy in the world...", Score = 3}
+                new ServiceReview {ServiceId = 1, Id = 1, Date = "January 2021", Comment = "I love this agency <3.", Score = 5},
+                new ServiceReview {ServiceId = 2, Id = 2, Date = "February 2021", Comment = "I hate this bro...", Score = 1},
+                new ServiceReview {ServiceId = 3, Id = 3, Date = "March 2021", Comment = "I want to travel, but I cannot because there is a pandemy in the world...", Score = 3}
             );
 
             //Agency Entity
@@ -108,6 +108,10 @@ namespace Go2Climb.API.Persistence.Contexts
                 .HasMany(p => p.Services)
                 .WithOne(p => p.Agency)
                 .HasForeignKey(p => p.AgencyId);
+            builder.Entity<Agency>()
+                .HasMany(p => p.AgencyReviews)
+                .WithOne(p => p.Agency)
+                .HasForeignKey(p => p.AgencyId);
 
             builder.Entity<Agency>().HasData
             (
@@ -122,10 +126,10 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Activity>().Property(p => p.Name);
             builder.Entity<Activity>().Property(p => p.Description).IsRequired().HasMaxLength(50);
 
-            builder.Entity<Activity>()
+            /*builder.Entity<Activity>()
                 .HasOne(p => p.Service)
                 .WithMany(p => p.Activities)
-                .HasForeignKey(p => p.ServiceId);
+                .HasForeignKey(p => p.ServiceId);*/
 
             builder.Entity<Activity>().HasData
             (
@@ -152,13 +156,17 @@ namespace Go2Climb.API.Persistence.Contexts
                 .HasMany(p => p.Activities)
                 .WithOne(p => p.Service)
                 .HasForeignKey(p => p.ServiceId);
-
+            builder.Entity<Service>()
+                .HasMany(p => p.ServiceReviews)
+                .WithOne(p => p.Service)
+                .HasForeignKey(p => p.ServiceId);
+            
             builder.Entity<Service>().HasData
             (
                 new Service { Id = 1, AgencyId = 1, Name = "Enjoy an adventure in the mountains", Score = 4, Price = 480, Location = "Pomabamba, Ancash", CreationDate = "25-05-2020", Photos = "https://cdn.aarp.net/content/dam/aarp/tourism/national/2017/10/1140-maroon-bells-mountains-north-america-esp.imgcache.rev3ae52edfa9863c5cf8680f82006b8b2d.web.900.513.jpg", Description = "This is the description of this service", IsOffer = false},
-                new Service { Id = 2, AgencyId = 1, Name = "Climb, luck if you survive", Score = 5, Price = 520, NewPrice = 400, Location = "LugarX, Ancash", CreationDate = "10-02-2020", Photos = "https://www.caracteristicas.co/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg", Description = "This is the description of service 2", IsOffer = true},
+                new Service { Id = 2, AgencyId = 2, Name = "Climb, luck if you survive", Score = 5, Price = 520, NewPrice = 400, Location = "LugarX, Ancash", CreationDate = "10-02-2020", Photos = "https://www.caracteristicas.co/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg", Description = "This is the description of service 2", IsOffer = true},
                 new Service { Id = 3, AgencyId = 3, Name = "Let's see come and enjoy this place", Score = 4, Price = 250, Location = "No, Lima", CreationDate = "20-06-2021", Photos = "https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/5f96c5745bafe85c04aac28e/1-monte-everest_1.jpg", Description = "Take home, take home", IsOffer = false},
-                new Service { Id = 4, AgencyId = 3, Name = "Last chance to travel", Score = 2, Price = 780, NewPrice = 600, Location = "LugarX, Lima", CreationDate = "20-06-2021", Photos = "https://cdn.aarp.net/content/dam/aarp/travel/Domestic/2013-04/1140-wildflowers-mount-rainier-washington-frommers-beautiful-mountains-esp.imgcache.rev0e36c9680e5843406394b38ea8826513.jpg", Description = "A new place every day, come and find out for yourself", IsOffer = true}
+                new Service { Id = 4, AgencyId = 1, Name = "Last chance to travel", Score = 2, Price = 780, NewPrice = 600, Location = "LugarX, Lima", CreationDate = "20-06-2021", Photos = "https://cdn.aarp.net/content/dam/aarp/travel/Domestic/2013-04/1140-wildflowers-mount-rainier-washington-frommers-beautiful-mountains-esp.imgcache.rev0e36c9680e5843406394b38ea8826513.jpg", Description = "A new place every day, come and find out for yourself", IsOffer = true}
             );
 
             //Constrains

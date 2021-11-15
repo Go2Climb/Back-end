@@ -26,7 +26,7 @@ namespace Go2Climb.API.Persistence.Repositories
 
         public async Task<IEnumerable<Activity>> ListByServiceId(int serviceId)
         {
-            return await _context.Activities.Where(p => p.ServiceId == serviceId).ToListAsync();
+            return await _context.Activities.Where(p => p.ServiceId == serviceId).Include(p => p.Service).ToListAsync();
         }
 
         public async Task<Activity> FindById(int id)

@@ -24,6 +24,11 @@ namespace Go2Climb.API.Services
             return await _serviceReviewRepository.ListAsync();
         }
 
+        public async Task<IEnumerable<ServiceReview>> ListByServiceIdAsync(int serviceId)
+        {
+            return await _serviceReviewRepository.ListByServiceId(serviceId);
+        }
+
         public async Task<ServiceReviewResponse> GetByIdAsync(int id)
         {
             var existingResourceReview = _serviceReviewRepository.FindByIdAsync(id);

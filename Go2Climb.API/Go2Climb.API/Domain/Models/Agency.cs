@@ -14,6 +14,7 @@ namespace Go2Climb.API.Domain.Models
         public string Ruc { get; set; }
         public string Photo { get; set; }
         public int Score { get; set; }
-        public List<Service> Services { get; set; } = new List<Service>();
+        public IList<Service> Services { get; set; }
+        public IList<AgencyReview> AgencyReviews { get; set; }
     }
 }
