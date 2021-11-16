@@ -28,6 +28,11 @@ namespace Go2Climb.API.Services
             return await _agencyReviewRepository.ListByAgencyId(agencyId);
         }
 
+        public async Task<IEnumerable<AgencyReview>> ListByCustomerIdAsync(int customerId)
+        {
+            return await _agencyReviewRepository.ListByCustomerId(customerId);
+        }
+
         public async Task<AgencyReviewResponse> GetByIdAsync(int id)
         {
             var existingAgencyReview = _agencyReviewRepository.FindByIdAsync(id);

@@ -6,8 +6,5 @@
         public string Date { get; set; }
         public string Comment { get; set; } 
         public double Score { get; set; }
-        
-        public ServiceResource Service { get; set; }
-        //  public CustomerResource Customer { get; set; }
     }
 }

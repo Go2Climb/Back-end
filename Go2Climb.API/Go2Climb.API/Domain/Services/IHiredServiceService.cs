@@ -8,6 +8,7 @@ namespace Go2Climb.API.Domain.Services
     public interface IHiredServiceService
     {
         Task<IEnumerable<HiredService>> ListAsync();
+        Task<IEnumerable<HiredService>> FindByCustomerIdAsync(int customerId);
         Task<HideServiceResponse> SaveAsync(HiredService service);
         Task<HideServiceResponse> FindById(int id);
         Task<HideServiceResponse> UpdateAsync(int id, HiredService service);

@@ -31,9 +31,9 @@ namespace Go2Climb.API.Controllers
             Tags = new[] {"Agencies"})]
         public async Task<IEnumerable<AgencyReviewResource>> GetAllByAgencyId(int agencyId)
         {
-            var agencyreviews = await _agencyReviewService.ListByAgencyIdAsync(agencyId);
+            var agencyReviews = await _agencyReviewService.ListByAgencyIdAsync(agencyId);
             var resources = _mapper
-                .Map<IEnumerable<AgencyReview>, IEnumerable<AgencyReviewResource>>(agencyreviews);
+                .Map<IEnumerable<AgencyReview>, IEnumerable<AgencyReviewResource>>(agencyReviews);
             return resources;
         }
     }

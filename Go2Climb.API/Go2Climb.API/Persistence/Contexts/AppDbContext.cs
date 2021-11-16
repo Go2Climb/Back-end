@@ -42,6 +42,10 @@ namespace Go2Climb.API.Persistence.Contexts
                 .HasMany(p => p.ServiceReviews)
                 .WithOne(p => p.Customer)
                 .HasForeignKey(p => p.CustomerId);
+            builder.Entity<Customer>()
+                .HasMany(p => p.HideServices)
+                .WithOne(p => p.Customer)
+                .HasForeignKey(p => p.CustomerId);
 
             //Seed Data
             builder.Entity<Customer>().HasData
@@ -68,8 +72,8 @@ namespace Go2Climb.API.Persistence.Contexts
             //Seed Data
             builder.Entity<AgencyReview>().HasData
             (
-                new AgencyReview {AgencyId = 1, Id = 1, Date = "September 2021", Comment = "I had a good experience with this service.", ProfessionalismScore = 5, SecurityScore = 5, QualityScore = 5, CostScore = 5 },
-                new AgencyReview {AgencyId = 2, Id = 2, Date = "December 2020", Comment = "It is not my first time with TravelNew, they never disappoint me", ProfessionalismScore = 4, SecurityScore = 3, QualityScore = 4.5, CostScore = 3}
+                new AgencyReview {AgencyId = 1, CustomerId = 2, Id = 1, Date = "September 2021", Comment = "I had a good experience with this service.", ProfessionalismScore = 5, SecurityScore = 5, QualityScore = 5, CostScore = 5 },
+                new AgencyReview {AgencyId = 2, CustomerId = 1, Id = 2, Date = "December 2020", Comment = "It is not my first time with TravelNew, they never disappoint me", ProfessionalismScore = 4, SecurityScore = 3, QualityScore = 4.5, CostScore = 3}
             );
             
             //Constrains
@@ -86,9 +90,9 @@ namespace Go2Climb.API.Persistence.Contexts
             //Seed Data
             builder.Entity<ServiceReview>().HasData
             (
-                new ServiceReview {ServiceId = 1, Id = 1, Date = "January 2021", Comment = "I love this agency <3.", Score = 5},
-                new ServiceReview {ServiceId = 2, Id = 2, Date = "February 2021", Comment = "I hate this bro...", Score = 1},
-                new ServiceReview {ServiceId = 3, Id = 3, Date = "March 2021", Comment = "I want to travel, but I cannot because there is a pandemy in the world...", Score = 3}
+                new ServiceReview {ServiceId = 1, CustomerId = 2, Id = 1, Date = "January 2021", Comment = "I love this agency <3.", Score = 5},
+                new ServiceReview {ServiceId = 2, CustomerId = 3, Id = 2, Date = "February 2021", Comment = "I hate this bro...", Score = 1},
+                new ServiceReview {ServiceId = 3, CustomerId = 1, Id = 3, Date = "March 2021", Comment = "I want to travel, but I cannot because there is a pandemy in the world...", Score = 3}
             );
 
             //Agency Entity
@@ -125,11 +129,6 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Activity>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Activity>().Property(p => p.Name);
             builder.Entity<Activity>().Property(p => p.Description).IsRequired().HasMaxLength(50);
-
-            /*builder.Entity<Activity>()
-                .HasOne(p => p.Service)
-                .WithMany(p => p.Activities)
-                .HasForeignKey(p => p.ServiceId);*/
 
             builder.Entity<Activity>().HasData
             (
@@ -180,9 +179,9 @@ namespace Go2Climb.API.Persistence.Contexts
 
             builder.Entity<HiredService>().HasData
             (
-                new HiredService {Id = 1, Amount = 2, Price = 500, ScheduledDate = "10/10/2020", Status = "Finished"},
-                new HiredService {Id = 2, Amount = 1, Price = 300, ScheduledDate = "14/09/2021", Status = "Pending"},
-                new HiredService {Id = 3, Amount = 3, Price = 550, ScheduledDate = "21/03/2021", Status = "Finished"}
+                new HiredService {Id = 1, CustomerId = 2, ServiceId = 4, Amount = 2, Price = 500, ScheduledDate = "10/10/2020", Status = "Finished"},
+                new HiredService {Id = 2, CustomerId = 2, ServiceId = 2, Amount = 1, Price = 300, ScheduledDate = "14/09/2021", Status = "Pending"},
+                new HiredService {Id = 3, CustomerId = 1, ServiceId = 1, Amount = 3, Price = 550, ScheduledDate = "21/03/2021", Status = "Finished"}
             );
             
             builder.UseSnakeCaseNamingConventions();

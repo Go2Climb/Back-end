@@ -9,6 +9,7 @@ namespace Go2Climb.API.Domain.Repositories
     {
         Task<IEnumerable<AgencyReview>> ListAsync();
         Task<IEnumerable<AgencyReview>> ListByAgencyId(int agencyId);
+        Task<IEnumerable<AgencyReview>> ListByCustomerId(int customerId);
         Task AddAsync(AgencyReview agencyReview);
         Task<AgencyReview> FindByIdAsync(int id);
         //TODO: Implement the FindByAgency method

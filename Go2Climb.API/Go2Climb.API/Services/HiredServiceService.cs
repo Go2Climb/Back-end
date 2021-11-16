@@ -24,6 +24,11 @@ namespace Go2Climb.API.Services
             return await _hiredServiceRepository.ListAsync();
         }
 
+        public async Task<IEnumerable<HiredService>> FindByCustomerIdAsync(int customerId)
+        {
+            return await _hiredServiceRepository.FindByCustomerIdAsync(customerId);
+        }
+
         public async Task<HideServiceResponse> SaveAsync(HiredService service)
         {
             try
