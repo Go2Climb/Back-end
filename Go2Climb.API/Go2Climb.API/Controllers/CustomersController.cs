@@ -6,6 +6,8 @@ using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Extensions;
 using Go2Climb.API.Resources;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Go2Climb.API.Controllers
 {
@@ -22,6 +24,10 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpGet]
+        [SwaggerOperation(
+            Summary = "Get All Customers",
+            Description = "Get All The Customers From The Database.",
+            Tags = new[] {"Customers"})]
         public async Task<IEnumerable<CustomerResource>> GetAllAsync()
         {
             var customers = await _customerService.ListAsync();
@@ -30,6 +36,10 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpGet("{id}")]
+        [SwaggerOperation(
+            Summary = "Get Customer By Id",
+            Description = "Get A Customer From The Database Identified By Its Id.",
+            Tags = new[] {"Customers"})]
         public async Task<CustomerResource> GetByIdAsync(int id)
         {
             var customer = await _customerService.FindById(id);
@@ -38,6 +48,10 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpPost]
+        [SwaggerOperation(
+            Summary = "Register A Customer",
+            Description = "Add A Customer To The Database.",
+            Tags = new[] {"Customers"})]
         public async Task<IActionResult> PostAsync([FromBody] SaveCustomerResourse resource)
         {
             if (!ModelState.IsValid)
@@ -56,6 +70,10 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpPut("{id}")]
+        [SwaggerOperation(
+            Summary = "Edit A Customer",
+            Description = "Edit The Information Of A Customer Identified By His Id.",
+            Tags = new[] {"Customers"})]
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveCustomerResourse resource)
         {
             if (!ModelState.IsValid)
@@ -74,6 +92,10 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [SwaggerOperation(
+            Summary = "Delete A Customer",
+            Description = "Delete The Information Of A Client Identified By His Id.",
+            Tags = new[] {"Customers"})]
         public async Task<IActionResult> RemoteAsync(int id)
         {
             var result = await _customerService.DeleteAsync(id);
