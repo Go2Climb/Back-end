@@ -6,6 +6,7 @@ using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Extensions;
 using Go2Climb.API.Resources;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Go2Climb.API.Controllers
 {
@@ -22,6 +23,10 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpGet]
+        [SwaggerOperation(
+            Summary = "Get All Hired Services",
+            Description = "Get All Hired Services",
+            Tags = new[] {"Hired-Services"})]
         public async Task<IEnumerable<HiredServiceResource>> GetAllAsync()
         {
             var services = await _hiredServiceService.ListAsync();
@@ -30,6 +35,10 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpGet("{id}")]
+        [SwaggerOperation(
+            Summary = "Get A Hired Service By Id",
+            Description = "Get A Hired Service Identified By Id",
+            Tags = new[] {"Hired-Services"})]
         public async Task<HiredServiceResource> GetByIdAsync(int id)
         {
             var service = await _hiredServiceService.FindById(id);
@@ -38,6 +47,10 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpPost]
+        [SwaggerOperation(
+            Summary = "Register A Hired Service",
+            Description = "Add A Hired Service To The Database.",
+            Tags = new[] {"Hired-Services"})]
         public async Task<IActionResult> PostAsync([FromBody] SaveHiredServiceResource resource)
         {
             if (!ModelState.IsValid)
@@ -56,6 +69,10 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpPut("{id}")]
+        [SwaggerOperation(
+            Summary = "Edit A Hired Service Identified By Id",
+            Description = "Edit A Hired Service To The Database.",
+            Tags = new[] {"Hired-Services"})]
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveHiredServiceResource resource)
         {
             if (!ModelState.IsValid)
@@ -74,6 +91,10 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpDelete("{id}")]
+        [SwaggerOperation(
+            Summary = "Delete A Hired Service Identified By Id",
+            Description = "Delete A Hired Service To The Database.",
+            Tags = new[] {"Hired-Services"})]
         public async Task<IActionResult> RemoteAsync(int id)
         {
             var result = await _hiredServiceService.DeleteAsync(id);

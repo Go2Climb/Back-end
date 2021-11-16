@@ -7,19 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5c432a74-5b42-4403-bf96-183cc39373be" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/CustomerServiceReviewsControllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CustomerServiceReviewsControllers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/AgencyReviewResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/AgencyReviewResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/HiredServiceResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/HiredServiceResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/SaveAgencyReviewResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/SaveAgencyReviewResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/SaveHiredServiceResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/SaveHiredServiceResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/SaveServiceReviewResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/SaveServiceReviewResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/ServiceReviewResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/ServiceReviewResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/Go2Climb.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/Go2Climb.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/HiredServiceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/HiredServiceController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
