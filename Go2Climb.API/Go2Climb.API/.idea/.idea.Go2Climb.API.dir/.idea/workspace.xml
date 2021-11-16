@@ -6,22 +6,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c432a74-5b42-4403-bf96-183cc39373be" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Go2Climb.API.Tests/obj/Debug/net5.0/Go2Climb.API.Tests.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/CustomersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CustomersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Go2Climb.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Go2Climb.API.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Go2Climb.API.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Go2Climb.API.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CustomerServiceReviewsControllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CustomerServiceReviewsControllers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/AgencyReviewResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/AgencyReviewResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/HiredServiceResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/HiredServiceResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/SaveAgencyReviewResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/SaveAgencyReviewResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/SaveHiredServiceResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/SaveHiredServiceResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/SaveServiceReviewResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/SaveServiceReviewResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/ServiceReviewResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/ServiceReviewResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/Go2Climb.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/Go2Climb.API.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +82,8 @@
       <option name="presentableId" value="Default" />
       <updated>1637023215767</updated>
       <workItem from="1637023223088" duration="2229000" />
+      <workItem from="1637082348892" duration="603000" />
+      <workItem from="1637083296140" duration="467000" />
     </task>
     <servers />
   </component>

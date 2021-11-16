@@ -5,6 +5,12 @@ namespace Go2Climb.API.Resources
     public class SaveHiredServiceResource
     {
         [Required]
+        public int CustomerId { get; set; }
+        
+        [Required]
+        public int ServiceId { get; set; }
+        
+        [Required]
         public int Amount { get; set; }
         
         [Required]

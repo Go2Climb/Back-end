@@ -26,7 +26,7 @@ namespace Go2Climb.API.Controllers
         [HttpGet]
         [SwaggerOperation(
             Summary = "Get All ServiceReviews By Customer",
-            Description = "Get All Reviews For A Given CustomerId",
+            Description = "Get All ServiceReviews For A Given CustomerId",
             Tags = new[] {"Customers"})]
         public async Task<IEnumerable<ServiceReviewResource>>GetAllByServiceId(int customerId)
         {
