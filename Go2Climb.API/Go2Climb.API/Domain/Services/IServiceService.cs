@@ -9,7 +9,7 @@ namespace Go2Climb.API.Domain.Services
     {
         Task<IEnumerable<Service>> ListAsync();
         Task<ServiceResponse> GetById(int id);
-        Task<IEnumerable<Service>> ListByName(string name);
+        Task<IEnumerable<Service>> ListByText(string name, int start, int limit);
         Task<IEnumerable<Service>> ListByAgencyIdAsync(int agencyId);
         Task<ServiceResponse> SaveAsync(Service service);
         Task<ServiceResponse> UpdateAsync(int id, Service service);

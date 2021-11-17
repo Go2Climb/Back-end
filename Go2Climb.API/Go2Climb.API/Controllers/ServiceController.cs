@@ -36,6 +36,10 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [SwaggerOperation(
+            Summary = "Get All Services",
+            Description = "Get All Services already stored",
+            Tags = new[] {"Services"})]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var result = await _serviceService.GetById(id);
@@ -44,6 +48,17 @@ namespace Go2Climb.API.Controllers
                 return BadRequest(result.Message);
             
             return Ok(result.Resource);
+        }
+        [HttpGet("[controller]")]
+        [SwaggerOperation(
+            Summary = "Get All Services By Text",
+            Description = "Get All Services Of Coincided By Text",
+            Tags = new[] {"Services"})]
+        public async Task<IEnumerable<ServiceResource>> ListByText(string text, int start, int limit)
+        {
+            var services = await _serviceService.ListByText(text, start, limit);
+            var resources = _mapper.Map<IEnumerable<Service>, IEnumerable<ServiceResource>>(services);
+            return resources;
         }
 
         [HttpPost]

@@ -5,6 +5,7 @@ using Go2Climb.API.Domain.Models;
 using Go2Climb.API.Domain.Repositories;
 using Go2Climb.API.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace Go2Climb.API.Persistence.Repositories
 {
@@ -24,9 +25,10 @@ namespace Go2Climb.API.Persistence.Repositories
             return await _context.Services.Where(b => b.AgencyId == agencyId).Include(b => b.Agency).ToListAsync();
         }
 
-        public async Task<IEnumerable<Service>> ListByName(string name)
+        public async Task<IEnumerable<Service>> ListByText(string name, int start, int limit)
         {
-            return await _context.Services.Where(b => b.Name == name).ToListAsync();
+            return await _context.Services.Where(x => x.Name.ToLower().Contains(name.ToLower()) || x.Description.ToLower().Contains(name.ToLower()) || 
+                                                      x.Location.ToLower().Contains(name.ToLower())).Skip(start).Take(limit).ToListAsync();
         }
 
         public async Task<IEnumerable<Service>> ListById(int id)

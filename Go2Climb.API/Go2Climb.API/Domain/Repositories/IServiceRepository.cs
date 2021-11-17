@@ -8,7 +8,7 @@ namespace Go2Climb.API.Domain.Repositories
     {
         Task<IEnumerable<Service>> ListAsync();
         Task<IEnumerable<Service>> ListByAgencyId(int agencyId);
-        Task<IEnumerable<Service>> ListByName(string name);
+        Task<IEnumerable<Service>> ListByText(string name, int start, int limit);
         Task<IEnumerable<Service>> ListById(int id);
         Task<Service> FindById(int id);
         Task AddAsync(Service service);

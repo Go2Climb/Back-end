@@ -35,9 +35,9 @@ namespace Go2Climb.API.Services
             return new ServiceResponse(existingService.Result);
         }
 
-        public async Task<IEnumerable<Service>> ListByName(string name)
+        public async Task<IEnumerable<Service>> ListByText(string name, int start, int limit)
         {
-            return await _serviceRepository.ListByName(name);
+            return await _serviceRepository.ListByText(name, start, limit);
         }
 
         public async Task<IEnumerable<Service>> ListByAgencyIdAsync(int agencyId)
