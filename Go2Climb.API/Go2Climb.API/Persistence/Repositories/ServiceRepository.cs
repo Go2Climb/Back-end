@@ -30,6 +30,24 @@ namespace Go2Climb.API.Persistence.Repositories
             return await _context.Services.Where(x => x.Name.ToLower().Contains(name.ToLower()) || x.Description.ToLower().Contains(name.ToLower()) || 
                                                       x.Location.ToLower().Contains(name.ToLower())).Skip(start).Take(limit).ToListAsync();
         }
+        
+        public async Task<IEnumerable<Service>> ListByTextFilterMoney(string name, int min, int max, int start, int limit)
+        {
+            return await _context.Services.Where(x => (x.Name.ToLower().Contains(name.ToLower()) || x.Description.ToLower().Contains(name.ToLower()) || 
+                                                      x.Location.ToLower().Contains(name.ToLower())) && (x.Price >= min && x.Price <= max)).Skip(start).Take(limit).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Service>> ListByTextFilterScore(string name, int score, int start, int limit)
+        {
+            return await _context.Services.Where(x => (x.Name.ToLower().Contains(name.ToLower()) || x.Description.ToLower().Contains(name.ToLower()) || 
+                                                      x.Location.ToLower().Contains(name.ToLower())) && x.Score >= score).Skip(start).Take(limit).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Service>> ListByTextAndAllFilter(string name, int score, int min, int max, int start, int limit)
+        {
+            return await _context.Services.Where(x => (x.Name.ToLower().Contains(name.ToLower()) || x.Description.ToLower().Contains(name.ToLower()) || 
+                                                       x.Location.ToLower().Contains(name.ToLower())) && (x.Score >= score) && (x.Price >= min && x.Price <= max)).Skip(start).Take(limit).ToListAsync();
+        }
 
         public async Task<IEnumerable<Service>> ListById(int id)
         {
