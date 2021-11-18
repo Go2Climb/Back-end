@@ -49,7 +49,8 @@ namespace Go2Climb.API.Controllers
             
             return Ok(result.Resource);
         }
-        [HttpGet("[controller]")]
+        
+        [HttpGet("[controller]/text/{text}")]
         [SwaggerOperation(
             Summary = "Get All Services By Text",
             Description = "Get All Services Of Coincided By Text",
@@ -57,6 +58,42 @@ namespace Go2Climb.API.Controllers
         public async Task<IEnumerable<ServiceResource>> ListByText(string text, int start, int limit)
         {
             var services = await _serviceService.ListByText(text, start, limit);
+            var resources = _mapper.Map<IEnumerable<Service>, IEnumerable<ServiceResource>>(services);
+            return resources;
+        }
+        
+        [HttpGet("[controller]/text/{text}/money")]
+        [SwaggerOperation(
+            Summary = "Get All Services By Text",
+            Description = "Get All Services Of Coincided By Text",
+            Tags = new[] {"Services"})]
+        public async Task<IEnumerable<ServiceResource>> ListByTextAndFilterMoney(string text, int min, int max, int start, int limit)
+        {
+            var services = await _serviceService.ListByTextAndFilterMoney(text, min, max, start, limit);
+            var resources = _mapper.Map<IEnumerable<Service>, IEnumerable<ServiceResource>>(services);
+            return resources;
+        }
+        
+        [HttpGet("[controller]/text/{text}/score")]
+        [SwaggerOperation(
+            Summary = "Get All Services By Text",
+            Description = "Get All Services Of Coincided By Text",
+            Tags = new[] {"Services"})]
+        public async Task<IEnumerable<ServiceResource>> ListByTextAndFilterScore(string text, int score, int start, int limit)
+        {
+            var services = await _serviceService.ListByTextAndFilterScore(text, score, start, limit);
+            var resources = _mapper.Map<IEnumerable<Service>, IEnumerable<ServiceResource>>(services);
+            return resources;
+        }
+        
+        [HttpGet("[controller]/text/{text}/score/{score}/money")]
+        [SwaggerOperation(
+            Summary = "Get All Services By Text",
+            Description = "Get All Services Of Coincided By Text",
+            Tags = new[] {"Services"})]
+        public async Task<IEnumerable<ServiceResource>> ListByTextAndAllFilter(string text, int min, int max, int score, int start, int limit)
+        {
+            var services = await _serviceService.ListByTextAndAllFilter(text, score, min, max, start, limit);
             var resources = _mapper.Map<IEnumerable<Service>, IEnumerable<ServiceResource>>(services);
             return resources;
         }
