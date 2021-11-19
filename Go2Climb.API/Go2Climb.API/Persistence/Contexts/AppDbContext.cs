@@ -187,7 +187,7 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<HiredService>().HasData
             (
                 new HiredService {Id = 1, CustomerId = 1, ServiceId = 1, Amount = 1, Price = 480, ScheduledDate = "20/11/2021", Status = "pending"},
-                new HiredService {Id = 2, CustomerId = 2, ServiceId = 2, Amount = 1, Price = 300, ScheduledDate = "14/09/2021", Status = "pending"},
+                new HiredService {Id = 2, CustomerId = 1, ServiceId = 2, Amount = 1, Price = 300, ScheduledDate = "14/09/2021", Status = "pending"},
                 new HiredService {Id = 3, CustomerId = 5, ServiceId = 1, Amount = 3, Price = 550, ScheduledDate = "21/03/2021", Status = "finished"},
                 new HiredService {Id = 4, CustomerId = 3, ServiceId = 2, Amount = 2, Price = 320, ScheduledDate = "20/09/2021", Status = "active"},
                 new HiredService {Id = 5, CustomerId = 4, ServiceId = 1, Amount = 1, Price = 320, ScheduledDate = "20/11/2020", Status = "finished"}
