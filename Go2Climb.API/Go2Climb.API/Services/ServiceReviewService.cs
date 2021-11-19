@@ -11,6 +11,8 @@ namespace Go2Climb.API.Services
     public class ServiceReviewService : IServiceReviewService
     {
         private readonly IServiceReviewRepository _serviceReviewRepository;
+        private readonly ICustomerRepository _customerRepository;
+        private readonly IServiceRepository _serviceRepository;
         private readonly IUnitOfWork _unitOfWork;
 
         public ServiceReviewService(IServiceReviewRepository serviceReviewRepository, IUnitOfWork unitOfWork)
@@ -45,16 +47,12 @@ namespace Go2Climb.API.Services
         
         public async Task<ServiceReviewResponse> SaveAsync(ServiceReview serviceReview)
         {
-            /*
-            TODO: Validate CustomerId
             var existingCustomer = _customerRepository.FindByIdAsync(serviceReview.CustomerId);
             if (existingCustomer == null)
                 return new ServiceReviewResponse("Customer is not exist.");
-            TODO: Validate ServiceId
-            var exitingService = _serviceRepository.FindByIdAsync(serviceReview.ServiceId);
-            if (exitingAgency == null)
+            var exitingService = _serviceRepository.FindById(serviceReview.ServiceId);
+            if (exitingService == null)
                 return new ServiceReviewResponse("Service is not exist.");
-             */
             try
             {
                 await _serviceReviewRepository.AddAsync(serviceReview);

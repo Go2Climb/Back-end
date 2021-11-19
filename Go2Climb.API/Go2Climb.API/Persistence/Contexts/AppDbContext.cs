@@ -24,6 +24,7 @@ namespace Go2Climb.API.Persistence.Contexts
             base.OnModelCreating(builder);
             
             //Constrains
+            //TODO: ADD PHOTO TO CUSTOMER
             builder.Entity<Customer>().ToTable("Customers");
             builder.Entity<Customer>().HasKey(p => p.Id);
             builder.Entity<Customer>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
@@ -32,6 +33,7 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Customer>().Property(p => p.Email).IsRequired().HasMaxLength(250);
             builder.Entity<Customer>().Property(p => p.Password).IsRequired().HasMaxLength(25);
             builder.Entity<Customer>().Property(p => p.PhoneNumber).IsRequired().HasMaxLength(11);
+            builder.Entity<Customer>().Property(p => p.Photo);
 
             //Relationship
             builder.Entity<Customer>()
@@ -50,9 +52,11 @@ namespace Go2Climb.API.Persistence.Contexts
             //Seed Data
             builder.Entity<Customer>().HasData
             (
-                new Customer { Id = 1, Name = "Heber", LastName = "Cordova Jimenez", Email = "hbcordova10@gmail.com", Password = "12345", PhoneNumber = "902952757" },
-                new Customer { Id = 2, Name = "Maria", LastName = "Cordova Jimenez", Email = "iepvcordova@gmail.com", Password = "67890", PhoneNumber = "931015430" },
-                new Customer { Id = 3, Name = "Celia", LastName = "Jimenez Garcia", Email = "celia@gmail.com", Password = "12345", PhoneNumber = "977453221" }
+                new Customer { Id = 1, Name = "Heber", LastName = "Cordova Jimenez", Email = "hbcord@gmail.com", Password = "12345", PhoneNumber = "902952757", Photo = "https://i.pinimg.com/originals/57/67/51/5767513a0191633112d3f123b3931ab6.png"},
+                new Customer { Id = 2, Name = "Maria", LastName = "Cordova Jimenez", Email = "iepv@gmail.com", Password = "67890", PhoneNumber = "931015430", Photo = "https://64.media.tumblr.com/ab66cb6480d6fd36fdffbf0e76c0d706/02ec740286bff118-3b/s1280x1920/1660382d542f1cf1902bcf284fab342c44291708.png"},
+                new Customer { Id = 3, Name = "Celia", LastName = "Jimenez Garcia", Email = "celia@gmail.com", Password = "12345", PhoneNumber = "977453221", Photo = "https://64.media.tumblr.com/da0f572d2a8c2d081185b443c5552c7b/9d6ea44a3722ffa2-bd/s1280x1920/0f0486280de0e7979f5482f176c2daa1edfd4a41.jpg" },
+                new Customer { Id = 4, Name = "Alejandro", LastName = "Jacobo", Email = "alej@outlook.es", Password = "#o9L2TtFd", PhoneNumber = "985389026", Photo = "https://i.pinimg.com/736x/29/52/d7/2952d7689d9f57747800fc3547c3b263.jpg" },
+                new Customer { Id = 5, Name = "Rem", LastName = "Milla", Email = "rem@hotmail.com", Password = "R3mbest0waif%", PhoneNumber = "952684755", Photo = "https://64.media.tumblr.com/12642d704d69eb217bd5f388f5e55688/4565013b9e16e009-ec/s500x750/da633f0ba17116f35c0f627ff6ddc44c3568bf84.png" }
             );
             
             //Constrains
@@ -67,13 +71,15 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<AgencyReview>().Property(p => p.CostScore).IsRequired();
             
             //Relationships
-            //TODO: add the relationship with customer and agency to Agency reviews
+            //this table don't have relationships with other classes.
             
             //Seed Data
             builder.Entity<AgencyReview>().HasData
             (
                 new AgencyReview {AgencyId = 1, CustomerId = 2, Id = 1, Date = "September 2021", Comment = "I had a good experience with this service.", ProfessionalismScore = 5, SecurityScore = 5, QualityScore = 5, CostScore = 5 },
-                new AgencyReview {AgencyId = 2, CustomerId = 1, Id = 2, Date = "December 2020", Comment = "It is not my first time with TravelNew, they never disappoint me", ProfessionalismScore = 4, SecurityScore = 3, QualityScore = 4.5, CostScore = 3}
+                new AgencyReview {AgencyId = 2, CustomerId = 1, Id = 2, Date = "December 2020", Comment = "It is not my first time with TravelNew, they never disappoint me", ProfessionalismScore = 4, SecurityScore = 3, QualityScore = 4.5, CostScore = 3},
+                new AgencyReview {AgencyId = 1, CustomerId = 4, Id = 3, Date = "November 2021", Comment = "I am satisfied with this agency, the treatment is friendly and its staff is highly trained to serve the public.", ProfessionalismScore = 5, SecurityScore = 5, QualityScore = 5, CostScore = 5},
+                new AgencyReview {AgencyId = 1, CustomerId = 5, Id = 4, Date = "August 2020", Comment = "Thanks for everything, your service is too good, and the prices are worth it.", ProfessionalismScore = 5, SecurityScore = 5, QualityScore = 5, CostScore = 5}
             );
             
             //Constrains
@@ -85,14 +91,15 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<ServiceReview>().Property(p => p.Score).IsRequired();
 
             //Relationships
-            //TODO: add the relationship with customer and agency to Service reviews
+            //does not need relationships
 
             //Seed Data
             builder.Entity<ServiceReview>().HasData
             (
-                new ServiceReview {ServiceId = 1, CustomerId = 2, Id = 1, Date = "January 2021", Comment = "I love this agency <3.", Score = 5},
-                new ServiceReview {ServiceId = 2, CustomerId = 3, Id = 2, Date = "February 2021", Comment = "I hate this bro...", Score = 1},
-                new ServiceReview {ServiceId = 3, CustomerId = 1, Id = 3, Date = "March 2021", Comment = "I want to travel, but I cannot because there is a pandemy in the world...", Score = 3}
+                new ServiceReview {ServiceId = 1, CustomerId = 2, Id = 1, Date = "January 2021", Comment = "I love this agency <3.", Score = 5 },
+                new ServiceReview {ServiceId = 2, CustomerId = 3, Id = 2, Date = "February 2021", Comment = "I hate this bro...", Score = 1 },
+                new ServiceReview {ServiceId = 1, CustomerId = 1, Id = 3, Date = "March 2021", Comment = "I want to travel, but I cannot because there is a pandemy in the world...", Score = 3 },
+                new ServiceReview {ServiceId = 1, CustomerId = 5, Id = 4, Date = "February 2021", Comment = "It is unfortunate the way in which they sell you the experience and what they end up giving you", Score = 1 }
             );
 
             //Agency Entity
@@ -119,9 +126,9 @@ namespace Go2Climb.API.Persistence.Contexts
 
             builder.Entity<Agency>().HasData
             (
-                new Agency { Id = 1, Name = "NewTravel", Description = "The best agency from Peru", Email = "newtravel@gmail.com", Location = "Italy, Two -Peru", Password = "123456", Photo = "https://www.paquetesdeviajesperu.com/wp-content/uploads/2021/10/logo-peru-grand-travel-1.png", Ruc = "745123685", PhoneNumber = "985479265", Score = 5},
-                new Agency { Id = 2, Name = "PeruT", Description = "Low prices for poor families", Email = "peruT@gmail.com", Location = "San Miguel, Lima - Peru", Password = "1234", Photo = "https://www.paquetesdeviajesperu.com/wp-content/uploads/2021/10/logo-peru-grand-travel-1.png", Ruc = "798456123", PhoneNumber = "974563210", Score = 4},
-                new Agency { Id = 3, Name = "PeruM", Description = "From Peru to the world", Email = "peruM@gmail.com", Location = "Santa Anita, Lima - Peru", Password = "12345", Photo = "https://www.paquetesdeviajesperu.com/wp-content/uploads/2021/10/logo-peru-grand-travel-1.png", Ruc = "852147963", PhoneNumber = "963258741", Score = 3}
+                new Agency { Id = 1, Name = "NewTravel", Description = "The best agency from Peru", Email = "newtravel@gmail.com", Location = "Italy, Two -Peru", Password = "123456", Photo = "https://images-platform.99static.com/lXSSpmvn5jKysOcYlarTvztFwDs=/197x100:999x902/500x500/top/smart/99designs-contests-attachments/86/86291/attachment_86291786", Ruc = "745123685", PhoneNumber = "985479265", Score = 5},
+                new Agency { Id = 2, Name = "PeruT", Description = "Low prices for poor families", Email = "peruT@gmail.com", Location = "San Miguel, Lima - Peru", Password = "1234", Photo = "https://i.pinimg.com/originals/eb/e2/93/ebe293d16ad3f09d27b0164e542036fd.png", Ruc = "798456123", PhoneNumber = "974563210", Score = 4},
+                new Agency { Id = 3, Name = "PeruM", Description = "From Peru to the world", Email = "peruM@gmail.com", Location = "Santa Anita, Lima - Peru", Password = "12345", Photo = "https://images-platform.99static.com/ukhjoOpwhfCFP4UuY1fVO8Me9Ns=/0x0:1776x1776/500x500/top/smart/99designs-contests-attachments/86/86123/attachment_86123519", Ruc = "852147963", PhoneNumber = "963258741", Score = 3}
             );
             //Activity Entity
             builder.Entity<Activity>().ToTable("Activities");
@@ -169,7 +176,7 @@ namespace Go2Climb.API.Persistence.Contexts
             );
 
             //Constrains
-            builder.Entity<HiredService>().ToTable("HideServices");
+            builder.Entity<HiredService>().ToTable("HiredServices");
             builder.Entity<HiredService>().HasKey(p => p.Id);
             builder.Entity<HiredService>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<HiredService>().Property(p => p.Amount).IsRequired();
@@ -179,13 +186,14 @@ namespace Go2Climb.API.Persistence.Contexts
 
             builder.Entity<HiredService>().HasData
             (
-                new HiredService {Id = 1, CustomerId = 2, ServiceId = 4, Amount = 2, Price = 500, ScheduledDate = "10/10/2020", Status = "Finished"},
-                new HiredService {Id = 2, CustomerId = 2, ServiceId = 2, Amount = 1, Price = 300, ScheduledDate = "14/09/2021", Status = "Pending"},
-                new HiredService {Id = 3, CustomerId = 1, ServiceId = 1, Amount = 3, Price = 550, ScheduledDate = "21/03/2021", Status = "Finished"}
+                new HiredService {Id = 1, CustomerId = 1, ServiceId = 1, Amount = 1, Price = 480, ScheduledDate = "20/11/2021", Status = "pending"},
+                new HiredService {Id = 2, CustomerId = 2, ServiceId = 2, Amount = 1, Price = 300, ScheduledDate = "14/09/2021", Status = "pending"},
+                new HiredService {Id = 3, CustomerId = 5, ServiceId = 1, Amount = 3, Price = 550, ScheduledDate = "21/03/2021", Status = "finished"},
+                new HiredService {Id = 4, CustomerId = 3, ServiceId = 2, Amount = 2, Price = 320, ScheduledDate = "20/09/2021", Status = "active"},
+                new HiredService {Id = 5, CustomerId = 4, ServiceId = 1, Amount = 1, Price = 320, ScheduledDate = "20/11/2020", Status = "finished"}
             );
             
             builder.UseSnakeCaseNamingConventions();
-
         }
         
     }

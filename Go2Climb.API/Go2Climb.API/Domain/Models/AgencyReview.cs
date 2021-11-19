@@ -9,6 +9,7 @@
         public double SecurityScore { get; set; }
         public double QualityScore { get; set; }
         public double CostScore { get; set; }
+        
         //Relationships
         public int AgencyId { get; set; }
         public Agency Agency { get; set; }
