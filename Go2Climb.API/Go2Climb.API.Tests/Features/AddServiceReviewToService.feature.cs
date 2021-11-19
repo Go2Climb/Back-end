@@ -113,16 +113,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
  testRunner.Given("the user wants to review a service", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "Date",
                             "Comment",
                             "Score"});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "06-11-2021",
                             "Nice service",
                             "5"});
 #line 7
- testRunner.When("user add a new review", ((string)(null)), table2, "When ");
+ testRunner.When("user add a new review", ((string)(null)), table3, "When ");
 #line hidden
 #line 10
  testRunner.Then("the review will be added successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

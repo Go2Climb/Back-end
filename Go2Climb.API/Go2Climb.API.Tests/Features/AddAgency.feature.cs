@@ -19,7 +19,7 @@ namespace Go2Climb.API.Tests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class AddServiceToAgencyFeature : object, Xunit.IClassFixture<AddServiceToAgencyFeature.FixtureData>, System.IDisposable
+    public partial class AddAgencyFeature : object, Xunit.IClassFixture<AddAgencyFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Go2Climb.API.Tests.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "AddServiceToAgency.feature"
+#line 1 "AddAgency.feature"
 #line hidden
         
-        public AddServiceToAgencyFeature(AddServiceToAgencyFeature.FixtureData fixtureData, Go2Climb_API_Tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public AddAgencyFeature(AddAgencyFeature.FixtureData fixtureData, Go2Climb_API_Tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,8 @@ namespace Go2Climb.API.Tests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "AddServiceToAgency", "\tAs Agency I want to add my services so that my clients can see them", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "AddAgency", "\tAs Agency Owner I want to create my account in the web application for my busine" +
+                    "ss to grow", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,16 +81,16 @@ namespace Go2Climb.API.Tests.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Add new service to my agency")]
-        [Xunit.TraitAttribute("FeatureTitle", "AddServiceToAgency")]
-        [Xunit.TraitAttribute("Description", "Add new service to my agency")]
-        [Xunit.TraitAttribute("Category", "service-adding")]
-        public virtual void AddNewServiceToMyAgency()
+        [Xunit.SkippableFactAttribute(DisplayName="Create new Agency")]
+        [Xunit.TraitAttribute("FeatureTitle", "AddAgency")]
+        [Xunit.TraitAttribute("Description", "Create new Agency")]
+        [Xunit.TraitAttribute("Category", "agency-adding")]
+        public virtual void CreateNewAgency()
         {
             string[] tagsOfScenario = new string[] {
-                    "service-adding"};
+                    "agency-adding"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new service to my agency", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Agency", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -111,25 +112,27 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 6
- testRunner.Given("the agency wants to add on service endpoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I want to create a new Agency", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
-                            "Price",
+                            "Email",
+                            "PhoneNumber",
+                            "Description",
                             "Location",
-                            "CreationDate",
-                            "Description"});
-                table4.AddRow(new string[] {
-                            "New Service",
-                            "420",
-                            "Ancash",
-                            "06-11-2021",
-                            "This is a new service for my agency"});
+                            "Ruc"});
+                table2.AddRow(new string[] {
+                            "Go2Climb",
+                            "Go2Climb@gmail.com",
+                            "987654321",
+                            "New Agency",
+                            "Av. JD House",
+                            "98765432"});
 #line 7
- testRunner.When("owner add a new service", ((string)(null)), table4, "When ");
+ testRunner.When("I create a new Agency", ((string)(null)), table2, "When ");
 #line hidden
 #line 10
- testRunner.Then("the service will be added successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the agency will be created successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -142,12 +145,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                AddServiceToAgencyFeature.FeatureSetup();
+                AddAgencyFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                AddServiceToAgencyFeature.FeatureTearDown();
+                AddAgencyFeature.FeatureTearDown();
             }
         }
     }
