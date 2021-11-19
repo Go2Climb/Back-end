@@ -22,11 +22,6 @@ namespace Go2Climb.API.Controllers
             _hiredServiceService = hiredServiceService;
             _mapper = mapper;
         }
-<<<<<<< Updated upstream
-
-=======
-        
->>>>>>> Stashed changes
         [HttpGet]
         [SwaggerOperation(
             Summary = "Get All HiredServices By Customer",
@@ -40,8 +35,4 @@ namespace Go2Climb.API.Controllers
             return resources;
         }
     }
-<<<<<<< Updated upstream
-=======
-    
->>>>>>> Stashed changes
 }

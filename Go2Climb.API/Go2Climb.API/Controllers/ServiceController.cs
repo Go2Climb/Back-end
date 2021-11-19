@@ -97,11 +97,7 @@ namespace Go2Climb.API.Controllers
             var resources = _mapper.Map<IEnumerable<Service>, IEnumerable<ServiceResource>>(services);
             return resources;
         }
-<<<<<<< Updated upstream
         
-=======
-
->>>>>>> Stashed changes
         [HttpPost]
         [SwaggerOperation(
             Summary = "Register a Service",
