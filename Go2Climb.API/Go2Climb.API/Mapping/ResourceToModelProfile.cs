@@ -19,7 +19,7 @@ namespace Go2Climb.API.Mapping
 
             CreateMap<SaveAgencyReviewResource, AgencyReview>();
             CreateMap<SaveServiceReviewResource, ServiceReview>();
-
+            CreateMap<SaveSubscriptionResource, Subscription>();
         }
     }
 }

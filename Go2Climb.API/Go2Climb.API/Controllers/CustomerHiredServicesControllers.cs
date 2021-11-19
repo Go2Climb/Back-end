@@ -22,7 +22,7 @@ namespace Go2Climb.API.Controllers
             _hiredServiceService = hiredServiceService;
             _mapper = mapper;
         }
-        
+
         [HttpGet]
         [SwaggerOperation(
             Summary = "Get All HiredServices By Customer",
@@ -36,5 +36,4 @@ namespace Go2Climb.API.Controllers
             return resources;
         }
     }
-    
 }

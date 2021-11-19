@@ -6,6 +6,7 @@ using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Extensions;
 using Go2Climb.API.Resources;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Go2Climb.API.Controllers
 {
@@ -23,6 +24,10 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpGet]
+        [SwaggerOperation(
+            Summary = "Get All ServiceReviews",
+            Description = "Get All ServiceReviews already stored",
+            Tags = new[] {"ServiceReviews"})]
         public async Task<IEnumerable<ServiceReview>> GetAllAsync()
         {
             var serviceReview = await _serviceReviewService.ListAsync();
@@ -31,6 +36,9 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpGet("{id}")]
+        [SwaggerOperation(
+            Summary = "Get A ServiceReview by Id",
+            Description = "Get A ServiceReview already stored by its Id")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var result = await _serviceReviewService.GetByIdAsync(id);
@@ -42,6 +50,9 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpPost]
+        [SwaggerOperation(
+            Summary = "Register a ServiceReview",
+            Description = "Add a ServiceReview to the Database ")]
         public async Task<IActionResult> PostAsync([FromBody] SaveServiceReviewResource resource)
         {
             if (!ModelState.IsValid)
@@ -59,6 +70,9 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [SwaggerOperation(
+            Summary = "Delete a ServiceReview",
+            Description = "Remove a ServiceReview from the Database by its Id")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
             var result = await _serviceReviewService.DeleteAsync(id);

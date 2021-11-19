@@ -97,8 +97,11 @@ namespace Go2Climb.API.Controllers
             var resources = _mapper.Map<IEnumerable<Service>, IEnumerable<ServiceResource>>(services);
             return resources;
         }
-
+        
         [HttpPost]
+        [SwaggerOperation(
+            Summary = "Register a Service",
+            Description = "Add a Service to the Database")]
         public async Task<IActionResult> PostAsync([FromBody] SaveServiceResource resource)
         {
             if (!ModelState.IsValid)
@@ -116,6 +119,9 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpPut("{id}")]
+        [SwaggerOperation(
+            Summary = "Update a Service",
+            Description = "Update a Service From the Database by its Id")]
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveServiceResource resource)
         {
             if (!ModelState.IsValid)
@@ -133,6 +139,9 @@ namespace Go2Climb.API.Controllers
             return Ok(serviceResource);
         }
         [HttpDelete("{id}")]
+        [SwaggerOperation(
+            Summary = "Delete A Service",
+            Description = "Remove A Service already stored by its Id")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
             var result = await _serviceService.DeleteAsync(id);

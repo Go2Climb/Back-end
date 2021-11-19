@@ -6,6 +6,7 @@ using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Extensions;
 using Go2Climb.API.Resources;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Go2Climb.API.Controllers
 {
@@ -23,6 +24,10 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpGet]
+        [SwaggerOperation(
+            Summary = "Get All Activities",
+            Description = "Get All The Activities From The Database.",
+            Tags= new[] {"Activities"})]
         public async Task<IEnumerable<ActivityResource>> GetAllAsync()
         {
             var activities = await _activityService.ListAsync();
@@ -31,6 +36,9 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [SwaggerOperation(
+            Summary = "Get Activity By Id",
+            Description = "Get An Activity From The Database by its Id.")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var result = await _activityService.GetById(id);
@@ -42,6 +50,9 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpPost]
+        [SwaggerOperation(
+            Summary = "Register and Activity",
+            Description = "Add an Activity to the Database.")]
         public async Task<IActionResult> PostAsync([FromBody] SaveActivityResource resource)
         {
             if (!ModelState.IsValid)
@@ -59,6 +70,9 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpPut("{id}")]
+        [SwaggerOperation(
+            Summary = "Update an Activity",
+            Description = "Update an Activity From the Database by its Id.")]
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveActivityResource resource)
         {
             if (!ModelState.IsValid)
@@ -76,6 +90,9 @@ namespace Go2Climb.API.Controllers
             return Ok(activityResource);
         }
         [HttpDelete("{id}")]
+        [SwaggerOperation(
+            Summary = "Delete an Activity",
+            Description = "Remove an Activity from the Database by its Id")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
             var result = await _activityService.DeleteAsync(id);

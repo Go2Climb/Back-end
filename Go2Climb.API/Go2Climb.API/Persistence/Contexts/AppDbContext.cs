@@ -14,8 +14,7 @@ namespace Go2Climb.API.Persistence.Contexts
         public DbSet<ServiceReview> ServiceReviews { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<HiredService> HideServices { get; set; }
-
-
+        public DbSet<Subscription> Subscriptions { get; set; }
         public AppDbContext(DbContextOptions options) : base(options)
         {}
 
@@ -146,7 +145,7 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Service>().Property(p => p.Price).IsRequired();
             builder.Entity<Service>().Property(p => p.NewPrice);
             builder.Entity<Service>().Property(p => p.Location).IsRequired();
-            builder.Entity<Service>().Property(p => p.CreationDate).IsRequired();
+            builder.Entity<Service>().Property(p => p.CreationDate);
             builder.Entity<Service>().Property(p => p.Photos);
             builder.Entity<Service>().Property(p => p.Description).IsRequired().HasMaxLength(150);
             builder.Entity<Service>().Property(p => p.IsOffer);
@@ -162,10 +161,10 @@ namespace Go2Climb.API.Persistence.Contexts
             
             builder.Entity<Service>().HasData
             (
-                new Service { Id = 1, AgencyId = 1, Name = "Enjoy an adventure in the mountains", Score = 4, Price = 480, Location = "Pomabamba, Ancash", CreationDate = "25-05-2020", Photos = "https://cdn.aarp.net/content/dam/aarp/tourism/national/2017/10/1140-maroon-bells-mountains-north-america-esp.imgcache.rev3ae52edfa9863c5cf8680f82006b8b2d.web.900.513.jpg", Description = "This is the description of this service", IsOffer = false},
-                new Service { Id = 2, AgencyId = 2, Name = "Climb, luck if you survive", Score = 5, Price = 520, NewPrice = 400, Location = "LugarX, Ancash", CreationDate = "10-02-2020", Photos = "https://www.caracteristicas.co/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg", Description = "This is the description of service 2", IsOffer = true},
-                new Service { Id = 3, AgencyId = 3, Name = "Let's see come and enjoy this place", Score = 4, Price = 250, Location = "No, Lima", CreationDate = "20-06-2021", Photos = "https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/5f96c5745bafe85c04aac28e/1-monte-everest_1.jpg", Description = "Take home, take home", IsOffer = false},
-                new Service { Id = 4, AgencyId = 1, Name = "Last chance to travel", Score = 2, Price = 780, NewPrice = 600, Location = "LugarX, Lima", CreationDate = "20-06-2021", Photos = "https://cdn.aarp.net/content/dam/aarp/travel/Domestic/2013-04/1140-wildflowers-mount-rainier-washington-frommers-beautiful-mountains-esp.imgcache.rev0e36c9680e5843406394b38ea8826513.jpg", Description = "A new place every day, come and find out for yourself", IsOffer = true}
+                new Service { Id = 1, AgencyId = 1, Name = "Enjoy an adventure in the mountains", Score = 4, Price = 480, Location = "Pomabamba, Ancash", CreationDate = "25-05-2020", Photos = "https://cdn.aarp.net/content/dam/aarp/tourism/national/2017/10/1140-maroon-bells-mountains-north-america-esp.imgcache.rev3ae52edfa9863c5cf8680f82006b8b2d.web.900.513.jpg", Description = "This is the description of this service", IsOffer = 0},
+                new Service { Id = 2, AgencyId = 2, Name = "Climb, luck if you survive", Score = 5, Price = 520, NewPrice = 400, Location = "LugarX, Ancash", CreationDate = "10-02-2020", Photos = "https://www.caracteristicas.co/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg", Description = "This is the description of service 2", IsOffer = 1},
+                new Service { Id = 3, AgencyId = 3, Name = "Let's see come and enjoy this place", Score = 4, Price = 250, Location = "No, Lima", CreationDate = "20-06-2021", Photos = "https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/5f96c5745bafe85c04aac28e/1-monte-everest_1.jpg", Description = "Take home, take home", IsOffer = 0},
+                new Service { Id = 4, AgencyId = 1, Name = "Last chance to travel", Score = 2, Price = 780, NewPrice = 600, Location = "LugarX, Lima", CreationDate = "20-06-2021", Photos = "https://cdn.aarp.net/content/dam/aarp/travel/Domestic/2013-04/1140-wildflowers-mount-rainier-washington-frommers-beautiful-mountains-esp.imgcache.rev0e36c9680e5843406394b38ea8826513.jpg", Description = "A new place every day, come and find out for yourself", IsOffer = 1}
             );
 
             //Constrains
@@ -185,7 +184,21 @@ namespace Go2Climb.API.Persistence.Contexts
             );
             
             builder.UseSnakeCaseNamingConventions();
+            
+            //Constraints
+            builder.Entity<Subscription>().ToTable("Subscriptions");
+            builder.Entity<Subscription>().HasKey(p => p.Id);
+            builder.Entity<Subscription>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Subscription>().Property(p => p.Name).IsRequired();
+            builder.Entity<Subscription>().Property(p => p.Price).IsRequired();
+            builder.Entity<Subscription>().Property(p => p.Description).IsRequired();
 
+            builder.Entity<Subscription>().HasData
+            (
+                new Subscription {Id = 1, Name = "Basic", Price = 20, Description="Publish 3 services"},
+                new Subscription {Id = 2, Name = "Standard", Price = 35, Description="Publish 10 services"},
+                new Subscription {Id = 3, Name = "Premium", Price = 45, Description="Publish 50 services"}
+            );
         }
         
     }

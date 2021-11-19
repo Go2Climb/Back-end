@@ -36,6 +36,9 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [SwaggerOperation(
+            Summary = "Get AgencyReview by Id",
+            Description = "Get and AgencyReview already stored by its Id")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var result = await _agencyReviewService.GetByIdAsync(id);
@@ -47,6 +50,9 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpPost]
+        [SwaggerOperation(
+            Summary = "Register an AgencyReview",
+            Description = "Add an AgencyReview to the Database")]
         public async Task<IActionResult> PostAsync([FromBody] SaveAgencyReviewResource resource)
         {
             if (!ModelState.IsValid)
@@ -64,6 +70,9 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [SwaggerOperation(
+            Summary = "Delete An AgencyReview",
+            Description = "Remove an Agency already stored by its Id")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
             var result = await _agencyReviewService.DeleteAsync(id);

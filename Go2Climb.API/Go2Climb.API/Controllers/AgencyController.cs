@@ -34,7 +34,9 @@ namespace Go2Climb.API.Controllers
             var resources = _mapper.Map<IEnumerable<Agency>, IEnumerable<AgencyResource>>(agencies);
             return resources;
         }
-
+        [SwaggerOperation(
+            Summary = "Get Agency By Id",
+            Description = "Get An Agency already stored by its Id")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
@@ -47,6 +49,9 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpPost]
+        [SwaggerOperation(
+            Summary = "Register an Agency",
+            Description = "Add an Agency to the Database")]
         public async Task<IActionResult> PostAsync([FromBody] SaveAgencyResource resource)
         {
             if (!ModelState.IsValid)
@@ -64,6 +69,9 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpPut("{id}")]
+        [SwaggerOperation(
+            Summary = "Update an Agency",
+            Description = "Update an Agency From the Database by its Id")]
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveAgencyResource resource)
         {
             if (!ModelState.IsValid)
@@ -81,6 +89,9 @@ namespace Go2Climb.API.Controllers
             return Ok(agencyResource);
         }
         [HttpDelete("{id}")]
+        [SwaggerOperation(
+            Summary = "Delete an Agency",
+            Description = "Remove an Agency already stored by its Id")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
             var result = await _agencyService.DeleteAsync(id);
