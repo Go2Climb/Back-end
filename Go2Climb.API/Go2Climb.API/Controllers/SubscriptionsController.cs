@@ -6,7 +6,10 @@ using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Extensions;
 using Go2Climb.API.Resources;
 using Microsoft.AspNetCore.Mvc;
+<<<<<<< Updated upstream
 using Swashbuckle.AspNetCore.Annotations;
+=======
+>>>>>>> Stashed changes
 
 namespace Go2Climb.API.Controllers
 {
@@ -24,10 +27,13 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpGet]
+<<<<<<< Updated upstream
         [SwaggerOperation(
             Summary = "Get All Subscriptions",
             Description = "Get All Subscriptions From The Database.",
             Tags= new[] {"Subscriptions"})]
+=======
+>>>>>>> Stashed changes
         public async Task<IEnumerable<SubscriptionResource>> GetAllAsync()
         {
             var subscriptions = await _subscriptionService.ListAsync();
@@ -36,9 +42,12 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpGet("{id}")]
+<<<<<<< Updated upstream
         [SwaggerOperation(
             Summary = "Get Subscription By Id",
             Description = "Get A Subscription already stored by its Id")]
+=======
+>>>>>>> Stashed changes
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var result = await _subscriptionService.GetById(id);
@@ -50,9 +59,12 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpPost]
+<<<<<<< Updated upstream
         [SwaggerOperation(
             Summary = "Register a Subscription",
             Description = "Add a Subscription to the Database")]
+=======
+>>>>>>> Stashed changes
         public async Task<IActionResult> PostAsync([FromBody] SaveSubscriptionResource resource)
         {
             if (!ModelState.IsValid)
@@ -70,9 +82,12 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpPut("{id}")]
+<<<<<<< Updated upstream
         [SwaggerOperation(
             Summary = "Update a Subscription",
             Description = "Update a Subscription From the Database by its Id")]
+=======
+>>>>>>> Stashed changes
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveSubscriptionResource resource)
         {
             if (!ModelState.IsValid)
@@ -91,9 +106,12 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpDelete("{id}")]
+<<<<<<< Updated upstream
         [SwaggerOperation(
             Summary = "Delete A Subscription",
             Description = "Remove A Subscription already stored by its Id")]
+=======
+>>>>>>> Stashed changes
         public async Task<IActionResult> DeleteAsync(int id)
         {
             var result = await _subscriptionService.DeleteAsync(id);

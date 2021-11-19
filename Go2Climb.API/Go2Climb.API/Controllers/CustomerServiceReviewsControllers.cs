@@ -36,4 +36,8 @@ namespace Go2Climb.API.Controllers
             return resources;
         }
     }
+<<<<<<< Updated upstream
+=======
+    
+>>>>>>> Stashed changes
 }

@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="UserContentModel">
@@ -7,6 +8,8 @@
     <explicitExcludes />
   </component>
 =======
+=======
+>>>>>>> Stashed changes
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="UserContentModel">
@@ -14,5 +17,8 @@
     <explicitIncludes />
     <explicitExcludes />
   </component>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 </project>

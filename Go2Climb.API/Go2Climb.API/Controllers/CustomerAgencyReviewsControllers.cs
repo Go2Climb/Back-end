@@ -22,7 +22,11 @@ namespace Go2Climb.API.Controllers
             _agencyReviewService = agencyReviewService;
             _mapper = mapper;
         }
+<<<<<<< Updated upstream
 
+=======
+        
+>>>>>>> Stashed changes
         [HttpGet]
         [SwaggerOperation(
             Summary = "Get All AgencyReviews By Customer",
