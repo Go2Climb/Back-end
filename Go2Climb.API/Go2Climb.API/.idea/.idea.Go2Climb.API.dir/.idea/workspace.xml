@@ -7,27 +7,21 @@
   <component name="ChangeListManager">
     <list default="true" id="5c432a74-5b42-4403-bf96-183cc39373be" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/AgencyReviewService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/AgencyReviewService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ServiceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ServiceController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IServiceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Repositories/IServiceRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/IServiceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Services/IServiceService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Contexts/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Contexts/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/ServiceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Repositories/ServiceRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/ServiceReviewsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Repositories/ServiceReviewsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/ServiceResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/ServiceResource.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/ServiceReviewService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ServiceReviewService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ServiceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ServiceService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.runtimeconfig.dev.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/Go2Climb.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/Go2Climb.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Go2Climb.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Go2Climb.API.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Go2Climb.API.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Go2Climb.API.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Go2Climb.API.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Go2Climb.API.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,6 +99,18 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

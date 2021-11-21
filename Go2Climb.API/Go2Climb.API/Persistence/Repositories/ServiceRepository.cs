@@ -49,6 +49,21 @@ namespace Go2Climb.API.Persistence.Repositories
                                                        x.Location.ToLower().Contains(name.ToLower())) && (x.Score >= score) && (x.Price >= min && x.Price <= max)).Skip(start).Take(limit).ToListAsync();
         }
 
+        public async Task<IEnumerable<Service>> FilterByCategoryOffers(int start, int limit)
+        {
+            return await _context.Services.Where(x => x.IsOffer == true).OrderBy(x => x.CreationDate).Skip(start).Take(limit).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Service>> FilterByCategoryPopulars(int start, int limit)
+        {
+            return await _context.Services.OrderByDescending(x => x.Score).Skip(start).Take(limit).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Service>> FilterByCategoryForYou(int start, int limit)
+        {
+            return await _context.Services.OrderBy(x => x.Price).ThenByDescending(x => x.Score).Skip(start).Take(limit).ToListAsync();
+        }
+
         public async Task<IEnumerable<Service>> ListById(int id)
         {
             return await _context.Services.Where(p => p.Id == id).ToListAsync();
