@@ -3,6 +3,7 @@
     public class ServiceResource
     {
         public int Id { get; set; }
+        public int AgencyId { get; set; }
         public string Name { get; set; }
         public short Score { get; set; }
         public int Price { get; set; }

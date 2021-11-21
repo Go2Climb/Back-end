@@ -41,7 +41,7 @@ namespace Go2Climb.API.Services
 
         public async Task<ServiceReviewResponse> GetByIdAsync(int id)
         {
-            var existingResourceReview = _serviceReviewRepository.FindByIdAsync(id);
+            var existingResourceReview =  _serviceReviewRepository.FindByIdAsync(id);
             if (existingResourceReview.Result == null)
                 return new ServiceReviewResponse("The agency review is not exist.");
             
