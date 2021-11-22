@@ -28,20 +28,6 @@ namespace Go2Climb.API.Services
             _mapper = mapper;
         }
 
-        public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest request)
-        {
-            var customer = await _customerRepository.FindByEmailAsync(request.Email);
-
-            //Validate
-            if (customer == null || !BCryptNet.Verify(request.Password, customer.PasswordHash))
-                throw new AppException("Email or password is incorrect.");
-            
-            //Authentication successful
-            var response = _mapper.Map<AuthenticateResponse>(customer);
-            response.Token = _jwtHandler.GenerateToken(customer);
-            return response;
-        }
-        
         public async Task<IEnumerable<Customer>> ListAsync()
         {
             return await _customerRepository.ListAsync();
@@ -67,6 +53,7 @@ namespace Go2Climb.API.Services
             customer.PasswordHash = BCryptNet.HashPassword(request.Password);
             
             //Save customer
+            //Console.WriteLine($"{customer}");
             try
             {
                 await _customerRepository.AddAsync(customer);
@@ -104,21 +91,6 @@ namespace Go2Climb.API.Services
             }
         }
 
-        public async Task<CustomerResponse> SaveAsync(Customer customer)
-        {
-            try
-            {
-                await _customerRepository.AddAsync(customer);
-                await _unitOfWork.CompleteAsync();
-                
-                return new CustomerResponse(customer);
-            }
-            catch (Exception e)
-            {
-                return new CustomerResponse($"An error occurred while saving the customer: {e.Message}");
-            }
-        }
-
         public async Task<CustomerResponse> FindById(int id)
         {
             var existingCustomer = await _customerRepository.FindByIdAsync(id);
@@ -127,32 +99,6 @@ namespace Go2Climb.API.Services
                 return new CustomerResponse("Customer not found.");
 
             return new CustomerResponse(existingCustomer);
-        }
-
-        public async Task<CustomerResponse> UpdateAsync(int id, Customer customer)
-        {
-            var existingCustomer = await _customerRepository.FindByIdAsync(id);
-
-            if (existingCustomer == null)
-                return new CustomerResponse("Customer not found.");
-
-            existingCustomer.Name = customer.Name;
-            existingCustomer.LastName = customer.LastName;
-            existingCustomer.Email = customer.Email;
-            existingCustomer.PasswordHash = customer.PasswordHash;
-            existingCustomer.PhoneNumber = customer.PhoneNumber;
-
-            try
-            {
-                _customerRepository.Update(existingCustomer);
-                await _unitOfWork.CompleteAsync();
-                
-                return new CustomerResponse(existingCustomer);
-            }
-            catch (Exception e)
-            {
-                return new CustomerResponse($"An error occurred while updating the customer: {e.Message}");
-            }
         }
 
         public async Task DeleteAsync(int id)

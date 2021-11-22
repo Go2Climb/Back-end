@@ -13,6 +13,7 @@ namespace Go2Climb.API.Mapping
 
             CreateMap<Activity, ActivityResource>();
             CreateMap<Agency, AgencyResource>();
+            CreateMap<Agency, AuthenticateResponse>();
             CreateMap<Service, ServiceResource>();
 
             CreateMap<Customer, CustomerResource>();
@@ -20,6 +21,10 @@ namespace Go2Climb.API.Mapping
             CreateMap<HiredService, HiredServiceResource>();
             CreateMap<AgencyReview, AgencyReviewResource>();
             CreateMap<ServiceReview, ServiceReviewResource>();
+
+            CreateMap<AuthenticateResponse, AuthenticateAgencyResponse>();
+            CreateMap<AuthenticateResponse, AuthenticateCustomerResponse>();
+            
         }
     }
 }

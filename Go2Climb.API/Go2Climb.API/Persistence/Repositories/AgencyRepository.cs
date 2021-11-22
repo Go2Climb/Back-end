@@ -18,25 +18,35 @@ namespace Go2Climb.API.Persistence.Repositories
         {
             return await _context.Agencies.ToListAsync();
         }
-
-        public async Task<IEnumerable<Agency>> ListById(int id)
+        
+        public async Task AddAsync(Agency agency)
         {
-            return await _context.Agencies.Where(p => p.Id == id).ToListAsync();
+            await _context.Agencies.AddAsync(agency);
+        }
+
+        public async Task<Agency> FindByIdAsync(int id)
+        {
+            return await _context.Agencies.FindAsync(id);
+        }
+
+        public Agency FindById(int id)
+        {
+            return _context.Agencies.Find(id);
+        }
+        
+        public async Task<Agency> FindByEmailAsync(string email)
+        {
+            return await _context.Agencies.SingleOrDefaultAsync(C => C.Email == email);
+        }
+        
+        public bool ExistsByEmail(string email)
+        {
+            return _context.Agencies.Any(c => c.Email == email);
         }
 
         public async Task<IEnumerable<Agency>> ListByName(string name)
         {
             return await _context.Agencies.Where(p => p.Name == name).ToListAsync();
-        }
-
-        public async Task<Agency> FindById(int id)
-        {
-            return await _context.Agencies.FindAsync(id);
-        }
-
-        public async Task AddAsync(Agency agency)
-        {
-            await _context.Agencies.AddAsync(agency);
         }
 
         public void Update(Agency agency)
