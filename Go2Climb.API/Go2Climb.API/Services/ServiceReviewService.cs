@@ -43,7 +43,7 @@ namespace Go2Climb.API.Services
         {
             var existingResourceReview =  _serviceReviewRepository.FindByIdAsync(id);
             if (existingResourceReview.Result == null)
-                return new ServiceReviewResponse("The agency review is not exist.");
+                return new ServiceReviewResponse("The service review does not exist.");
             
             return new ServiceReviewResponse(existingResourceReview.Result);
         }
@@ -52,10 +52,10 @@ namespace Go2Climb.API.Services
         {
             var existingCustomer =  _customerRepository.FindByIdAsync(serviceReview.CustomerId);
             if (existingCustomer.Result == null)
-                return new ServiceReviewResponse("Customer is not exist.");
+                return new ServiceReviewResponse("Customer does not exist.");
             var exitingService = _serviceRepository.FindById(serviceReview.ServiceId);
             if (exitingService.Result == null)
-                return new ServiceReviewResponse("Service is not exist.");
+                return new ServiceReviewResponse("Service does not exist.");
             try
             {
                 await _serviceReviewRepository.AddAsync(serviceReview);

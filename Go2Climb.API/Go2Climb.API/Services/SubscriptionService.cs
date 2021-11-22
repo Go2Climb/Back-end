@@ -28,7 +28,7 @@ namespace Go2Climb.API.Services
         {
             var existingSubscription = _subscriptionRepository.FindById(id);
             if (existingSubscription.Result == null)
-                return new SubscriptionResponse("The activity does not exist.");
+                return new SubscriptionResponse("The subscription does not exist");
             
             return new SubscriptionResponse(existingSubscription.Result);
         }
@@ -43,7 +43,7 @@ namespace Go2Climb.API.Services
             }
             catch (Exception e)
             {
-                return new SubscriptionResponse($"An error occurred while saving the activity: {e.Message}");
+                return new SubscriptionResponse($"An error occurred while saving the Subscription: {e.Message}");
             }
         }
 
@@ -71,7 +71,7 @@ namespace Go2Climb.API.Services
         {
             var existingSubscription = await _subscriptionRepository.FindById(id);
             if (existingSubscription == null)
-                return new SubscriptionResponse("Activity not found");
+                return new SubscriptionResponse("Subscription not found");
             try
             {
                 _subscriptionRepository.Remove(existingSubscription);
