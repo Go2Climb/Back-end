@@ -2,6 +2,7 @@ using AutoMapper;
 using Go2Climb.API.Domain.Models;
 using Go2Climb.API.Domain.Services.Communication;
 using Go2Climb.API.Resources;
+using Go2Climb.API.Security.Domain.Services.Communication;
 
 namespace Go2Climb.API.Mapping
 {
@@ -15,6 +16,7 @@ namespace Go2Climb.API.Mapping
             CreateMap<Service, ServiceResource>();
 
             CreateMap<Customer, CustomerResource>();
+            CreateMap<Customer, AuthenticateResponse>();
             CreateMap<HiredService, HiredServiceResource>();
             CreateMap<AgencyReview, AgencyReviewResource>();
             CreateMap<ServiceReview, ServiceReviewResource>();

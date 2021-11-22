@@ -97,19 +97,6 @@ namespace Go2Climb.API.Controllers
             var resources = _mapper.Map<IEnumerable<Service>, IEnumerable<ServiceResource>>(services);
             return resources;
         }
-        
-        [HttpGet("[controller]/category")]
-        [SwaggerOperation(
-            Summary = "Get All Services",
-            Description = "Get All Services already stored",
-            Tags = new[] {"Services"})]
-        public async Task<IEnumerable<ServiceResource>> FilterByCategories(string name, int start, int limit)
-        {
-            var services = await _serviceService.FilterByCategory(name, start, limit);
-            var resources = _mapper.Map<IEnumerable<Service>, IEnumerable<ServiceResource>>(services);
-            return resources;
-            
-        }
 
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] SaveServiceResource resource)

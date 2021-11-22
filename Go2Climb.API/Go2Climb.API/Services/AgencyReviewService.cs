@@ -15,12 +15,10 @@ namespace Go2Climb.API.Services
         private readonly IAgencyRepository _agencyRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public AgencyReviewService(IAgencyReviewRepository agencyReviewRepository, IUnitOfWork unitOfWork, ICustomerRepository customerRepository, IAgencyRepository agencyRepository)
+        public AgencyReviewService(IAgencyReviewRepository agencyReviewRepository, IUnitOfWork unitOfWork)
         {
             _agencyReviewRepository = agencyReviewRepository;
             _unitOfWork = unitOfWork;
-            _customerRepository = customerRepository;
-            _agencyRepository = agencyRepository;
         }
         public async Task<IEnumerable<AgencyReview>> ListAsync()
         {
@@ -49,10 +47,10 @@ namespace Go2Climb.API.Services
         public async Task<AgencyReviewResponse> SaveAsync(AgencyReview agencyReview)
         {
             var existingCustomer = _customerRepository.FindByIdAsync(agencyReview.CustomerId);
-            if (existingCustomer.Result == null)
+            if (existingCustomer == null)
                 return new AgencyReviewResponse("Customer is not exist.");
             var exitingAgency = _agencyRepository.FindById(agencyReview.AgencyId);
-            if (exitingAgency.Result == null)
+            if (exitingAgency == null)
                 return new AgencyReviewResponse("Agency is not exist.");
             try
             {
