@@ -6,6 +6,10 @@ using Go2Climb.API.Domain.Repositories;
 using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Persistence.Contexts;
 using Go2Climb.API.Persistence.Repositories;
+using Go2Climb.API.Security.Authorization.Handlers.Implementations;
+using Go2Climb.API.Security.Authorization.Handlers.Interfaces;
+using Go2Climb.API.Security.Authorization.Middleware;
+using Go2Climb.API.Security.Authorization.Settings;
 using Go2Climb.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -41,14 +45,21 @@ namespace Go2Climb.API
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Go2Climb.API", Version = "v1"});
                 c.EnableAnnotations();
             });
+
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             
+            /*
             //Configuration-In-memory Database
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseInMemoryDatabase("go2climb-api-in-memory");
-            });
-            
+            }); */
+            services.AddDbContext<AppDbContext>();
+
             //Dependency Injection Rules
+            services.AddScoped<IJwtHandler, JwtHandler>();
+            
+            
             services.AddScoped<IAgencyReviewRepository, AgencyReviewsRepository>();
             services.AddScoped<IAgencyReviewService, AgencyReviewService>();
             
@@ -73,7 +84,9 @@ namespace Go2Climb.API
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             
             //AutoMapper Dependency Injection 
-            services.AddAutoMapper(typeof(Startup));
+            //services.AddAutoMapper(typeof(Startup));
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -94,6 +107,9 @@ namespace Go2Climb.API
 
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
+            app.UseMiddleware<ErrorHandlerMiddleware>();
+            app.UseMiddleware<JwtMiddleware>();
+            
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }

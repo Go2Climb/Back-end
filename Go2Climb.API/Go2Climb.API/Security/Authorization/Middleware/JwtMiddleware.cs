@@ -2,22 +2,18 @@
 using System.Threading.Tasks;
 using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Security.Authorization.Handlers.Interfaces;
-using Go2Climb.API.Security.Authorization.Settings;
 using Go2Climb.API.Security.Domain.Services;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Options;
 
 namespace Go2Climb.API.Security.Authorization.Middleware
 {
     public class JwtMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly AppSettings _appSettings;
 
-        public JwtMiddleware(RequestDelegate next, IOptions<AppSettings> appSettings)
+        public JwtMiddleware(RequestDelegate next)
         {
             _next = next;
-            _appSettings = appSettings.Value;
         }
 
         public async Task Invoke(HttpContext context, ICustomerService customerService, IJwtHandler handler)

@@ -5,12 +5,15 @@ using Go2Climb.API.Domain.Models;
 using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Extensions;
 using Go2Climb.API.Resources;
+using Go2Climb.API.Security.Authorization.Attributes;
+using Go2Climb.API.Security.Domain.Services.Communication;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace Go2Climb.API.Controllers
 {
+    
+    [ApiController]
     [Route("api/v1/[controller]")]
     public class CustomersController : ControllerBase
     {
@@ -22,7 +25,54 @@ namespace Go2Climb.API.Controllers
             _customerService = customerService;
             _mapper = mapper;
         }
+
+        [AllowAnonymous]
+        [HttpPost("auth/sign-in")]
+        public async Task<IActionResult> Authenticate(AuthenticateRequest request)
+        {
+            var response = await _customerService.Authenticate(request);
+            return Ok(response);
+        }
+
+        [AllowAnonymous]
+        [HttpPost("auth/sign-up")]
+        public async Task<IActionResult> Register(RegisterCustomerRequest request)
+        {
+            await _customerService.RegisterAsync(request);
+            return Ok(new {message = "Registration successful"});
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var customers = await _customerService.ListAsync();
+            var resources = _mapper.Map<IEnumerable<Customer>, IEnumerable<CustomerResource>>(customers);
+            return Ok(resources);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var customer = await _customerService.GetByIdAsync(id);
+            var resources = _mapper.Map<Customer, CustomerResource>(customer);
+            return Ok(resources);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, UpdateCustomerRequest request)
+        {
+            await _customerService.UpdateAsync(id, request);
+            return Ok(new {message = "Customer updated successfully"});
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _customerService.DeleteAsync(id);
+            return Ok(new {message = "Customer deleted successfully"});
+        }
         
+        /*
         [HttpGet]
         [SwaggerOperation(
             Summary = "Get All Customers",
@@ -89,7 +139,7 @@ namespace Go2Climb.API.Controllers
             var customerResource = _mapper.Map<Customer, CustomerResource>(result.Resource);
 
             return Ok(customerResource);
-        }
+        } 
 
         [HttpDelete("{id}")]
         [SwaggerOperation(
@@ -106,6 +156,6 @@ namespace Go2Climb.API.Controllers
             var customerResource = _mapper.Map<Customer, CustomerResource>(result.Resource);
 
             return Ok(customerResource);
-        }
+        } */
     }
 }

@@ -115,11 +115,11 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Agency>().ToTable("Agencies");
             builder.Entity<Agency>().HasKey(p => p.Id);
             builder.Entity<Agency>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Agency>().Property(p => p.Name).IsRequired().HasMaxLength(30);
+            builder.Entity<Agency>().Property(p => p.Name).IsRequired().HasMaxLength(50);
             builder.Entity<Agency>().Property(p => p.Email).IsRequired();
-            builder.Entity<Agency>().Property(p => p.PhoneNumber).IsRequired().HasMaxLength(9);
+            builder.Entity<Agency>().Property(p => p.PhoneNumber).IsRequired().HasMaxLength(10);
             builder.Entity<Agency>().Property(p => p.Description).IsRequired().HasMaxLength(200);
-            builder.Entity<Agency>().Property(p => p.Location).IsRequired().HasMaxLength(30);
+            builder.Entity<Agency>().Property(p => p.Location).IsRequired().HasMaxLength(50);
             builder.Entity<Agency>().Property(p => p.Ruc).IsRequired();
             builder.Entity<Agency>().Property(p => p.Photo);
             builder.Entity<Agency>().Property(p => p.Score);
@@ -157,14 +157,14 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Service>().ToTable("Services");
             builder.Entity<Service>().HasKey(p => p.Id);
             builder.Entity<Service>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Service>().Property(p => p.Name).IsRequired().HasMaxLength(25);
+            builder.Entity<Service>().Property(p => p.Name).IsRequired().HasMaxLength(35);
             builder.Entity<Service>().Property(p => p.Score);
             builder.Entity<Service>().Property(p => p.Price).IsRequired();
             builder.Entity<Service>().Property(p => p.NewPrice);
             builder.Entity<Service>().Property(p => p.Location).IsRequired();
             builder.Entity<Service>().Property(p => p.CreationDate).IsRequired();
-            builder.Entity<Service>().Property(p => p.Photos);
-            builder.Entity<Service>().Property(p => p.Description).IsRequired().HasMaxLength(150);
+            builder.Entity<Service>().Property(p => p.Photos).HasMaxLength(500);
+            builder.Entity<Service>().Property(p => p.Description).IsRequired().HasMaxLength(300);
             builder.Entity<Service>().Property(p => p.IsOffer);
 
             builder.Entity<Service>()
