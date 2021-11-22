@@ -13,7 +13,7 @@ namespace Go2Climb.API.Domain.Models
         public string CreationDate { get; set; }
         public string Photos { get; set; }
         public string Description { get; set; }
-        public int IsOffer { get; set; }
+        public bool IsOffer { get; set; }
         
         // Relationships
         public IList<Activity> Activities { get; set; }

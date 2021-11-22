@@ -11,12 +11,16 @@ namespace Go2Climb.API.Services
     public class AgencyReviewService : IAgencyReviewService
     {
         private readonly IAgencyReviewRepository _agencyReviewRepository;
+        private readonly ICustomerRepository _customerRepository;
+        private readonly IAgencyRepository _agencyRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public AgencyReviewService(IAgencyReviewRepository agencyReviewRepository, IUnitOfWork unitOfWork)
+        public AgencyReviewService(IAgencyReviewRepository agencyReviewRepository, IUnitOfWork unitOfWork, ICustomerRepository customerRepository, IAgencyRepository agencyRepository)
         {
             _agencyReviewRepository = agencyReviewRepository;
             _unitOfWork = unitOfWork;
+            _customerRepository = customerRepository;
+            _agencyRepository = agencyRepository;
         }
         public async Task<IEnumerable<AgencyReview>> ListAsync()
         {
@@ -44,16 +48,12 @@ namespace Go2Climb.API.Services
 
         public async Task<AgencyReviewResponse> SaveAsync(AgencyReview agencyReview)
         {
-            /*
-            TODO: Validate CustomerId
             var existingCustomer = _customerRepository.FindByIdAsync(agencyReview.CustomerId);
-            if (existingCustomer == null)
+            if (existingCustomer.Result == null)
                 return new AgencyReviewResponse("Customer is not exist.");
-            TODO: Validate AgencyId
-            var exitingAgency = _agencyRepository.FindByIdAsync(agencyReview.AgencyId);
-            if (exitingAgency == null)
+            var exitingAgency = _agencyRepository.FindById(agencyReview.AgencyId);
+            if (exitingAgency.Result == null)
                 return new AgencyReviewResponse("Agency is not exist.");
-             */
             try
             {
                 await _agencyReviewRepository.AddAsync(agencyReview);

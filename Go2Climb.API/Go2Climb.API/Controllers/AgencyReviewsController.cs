@@ -23,36 +23,39 @@ namespace Go2Climb.API.Controllers
             _agencyReviewService = agencyReviewService;
             _mapper = mapper;
         }
+        
         [SwaggerOperation(
             Summary = "Get All AgencyReviews",
             Description = "Get All AgencyReviews already stored",
             Tags = new[] {"AgencyReviews"})]
         [HttpGet]
-        public async Task<IEnumerable<AgencyReview>> GetAllAsync()
+        public async Task<IEnumerable<AgencyReviewResource>> GetAllAsync()
         {
             var agencyReviews = await _agencyReviewService.ListAsync();
-            //TODO: RETURN AGENCY REVIEW RESOURCE
-            return agencyReviews;
+            var resources = _mapper
+                .Map<IEnumerable<AgencyReview>, IEnumerable<AgencyReviewResource>>(agencyReviews);
+            return resources;
         }
 
-        [HttpGet("{id}")]
         [SwaggerOperation(
-            Summary = "Get AgencyReview by Id",
-            Description = "Get and AgencyReview already stored by its Id")]
+            Summary = "Get a Agency Review by id",
+            Description = "Get the agency review based on the id if it exists",
+            Tags = new[] {"AgencyReviews"})]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var result = await _agencyReviewService.GetByIdAsync(id);
-        
             if (!result.Success)
                 return BadRequest(result.Message);
-            
-            return Ok(result.Resource);
+            var agencyReviewResource = _mapper.Map<AgencyReview, AgencyReviewResource>(result.Resource);
+            return Ok(agencyReviewResource);
         }
 
-        [HttpPost]
         [SwaggerOperation(
-            Summary = "Register an AgencyReview",
-            Description = "Add an AgencyReview to the Database")]
+            Summary = "Register a agency review",
+            Description = "Add a agency review to the database ",
+            Tags = new[] {"AgencyReviews"})]
+        [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] SaveAgencyReviewResource resource)
         {
             if (!ModelState.IsValid)
@@ -64,15 +67,16 @@ namespace Go2Climb.API.Controllers
             if (!result.Success)
                 return BadRequest(result.Message);
             
-            //TODO: Convert the response from AgencyReview to AgencyReviewResource
+            var agencyReviewResource = _mapper.Map<AgencyReview, AgencyReviewResource>(result.Resource);
 
-            return Ok(result.Resource);
+            return Ok(agencyReviewResource);
         }
 
-        [HttpDelete("{id}")]
         [SwaggerOperation(
-            Summary = "Delete An AgencyReview",
-            Description = "Remove an Agency already stored by its Id")]
+            Summary = "Delete a agency review",
+            Description = "Delete the information of a agency review identified by his id.",
+            Tags = new[] {"AgencyReviews"})]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
             var result = await _agencyReviewService.DeleteAsync(id);
@@ -80,9 +84,9 @@ namespace Go2Climb.API.Controllers
             if (!result.Success)
                 return BadRequest(result.Message);
             
-            //TODO: Convert the response from AgencyReview to AgencyReviewResource
+            var agencyReviewResource = _mapper.Map<AgencyReview, AgencyReviewResource>(result.Resource);
             
-            return Ok(result.Resource);
+            return Ok(agencyReviewResource);
         }
     }
 }

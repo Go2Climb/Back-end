@@ -5,17 +5,22 @@ using Go2Climb.API.Domain.Models;
 using Go2Climb.API.Domain.Repositories;
 using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Domain.Services.Communication;
+using Go2Climb.API.Resources;
 
 namespace Go2Climb.API.Services
 {
     public class ServiceReviewService : IServiceReviewService
     {
         private readonly IServiceReviewRepository _serviceReviewRepository;
+        private readonly ICustomerRepository _customerRepository;
+        private readonly IServiceRepository _serviceRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public ServiceReviewService(IServiceReviewRepository serviceReviewRepository, IUnitOfWork unitOfWork)
+        public ServiceReviewService(IServiceReviewRepository serviceReviewRepository, ICustomerRepository customerRepository, IServiceRepository serviceRepository, IUnitOfWork unitOfWork)
         {
             _serviceReviewRepository = serviceReviewRepository;
+            _customerRepository = customerRepository;
+            _serviceRepository = serviceRepository;
             _unitOfWork = unitOfWork;
         }
 
@@ -36,7 +41,7 @@ namespace Go2Climb.API.Services
 
         public async Task<ServiceReviewResponse> GetByIdAsync(int id)
         {
-            var existingResourceReview = _serviceReviewRepository.FindByIdAsync(id);
+            var existingResourceReview =  _serviceReviewRepository.FindByIdAsync(id);
             if (existingResourceReview.Result == null)
                 return new ServiceReviewResponse("The agency review is not exist.");
             
@@ -45,16 +50,12 @@ namespace Go2Climb.API.Services
         
         public async Task<ServiceReviewResponse> SaveAsync(ServiceReview serviceReview)
         {
-            /*
-            TODO: Validate CustomerId
-            var existingCustomer = _customerRepository.FindByIdAsync(serviceReview.CustomerId);
-            if (existingCustomer == null)
+            var existingCustomer =  _customerRepository.FindByIdAsync(serviceReview.CustomerId);
+            if (existingCustomer.Result == null)
                 return new ServiceReviewResponse("Customer is not exist.");
-            TODO: Validate ServiceId
-            var exitingService = _serviceRepository.FindByIdAsync(serviceReview.ServiceId);
-            if (exitingAgency == null)
+            var exitingService = _serviceRepository.FindById(serviceReview.ServiceId);
+            if (exitingService.Result == null)
                 return new ServiceReviewResponse("Service is not exist.");
-             */
             try
             {
                 await _serviceReviewRepository.AddAsync(serviceReview);

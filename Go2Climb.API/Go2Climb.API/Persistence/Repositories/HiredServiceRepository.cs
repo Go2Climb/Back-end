@@ -28,10 +28,27 @@ namespace Go2Climb.API.Persistence.Repositories
         {
             return await _context.HideServices.FindAsync(id);
         }
+        
+        public async Task<IEnumerable<HiredService>> FindByAgencyIdAsync(int agencyId)
+        {
+            return await _context.HideServices
+                .Where(p => p.Service.AgencyId == agencyId)
+                .Include(c => c.Customer)
+                .Include( s => s.Service)
+                .ToListAsync();
+        }
 
         public async Task<IEnumerable<HiredService>> FindByCustomerIdAsync(int customerId)
         {
             return await _context.HideServices.Where(p => p.CustomerId == customerId).ToListAsync();
+        }
+        
+        public async Task<IEnumerable<HiredService>> FindByCustomerIdWithServiceInformationAsync(int customerId)
+        {
+            return await _context.HideServices
+                .Where(p => p.CustomerId == customerId)
+                .Include(s => s.Service)
+                .ToListAsync();
         }
 
         public void Update(HiredService service)

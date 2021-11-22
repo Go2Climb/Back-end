@@ -24,11 +24,11 @@ namespace Go2Climb.API.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
         [SwaggerOperation(
             Summary = "Get All AgencyReviews By Agency",
             Description = "Get All Reviews for a given AgencyId",
             Tags = new[] {"Agencies"})]
+        [HttpGet]
         public async Task<IEnumerable<AgencyReviewResource>> GetAllByAgencyId(int agencyId)
         {
             var agencyReviews = await _agencyReviewService.ListByAgencyIdAsync(agencyId);

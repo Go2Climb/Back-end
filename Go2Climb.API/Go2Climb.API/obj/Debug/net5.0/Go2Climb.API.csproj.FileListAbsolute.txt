@@ -150,3 +150,4 @@ E:\web\Back-End\Go2Climb.API\Go2Climb.API\obj\Debug\net5.0\Go2Climb.API.pdb
 E:\web\Back-End\Go2Climb.API\Go2Climb.API\obj\Debug\net5.0\Go2Climb.API.genruntimeconfig.cache
 C:\Users\SALOME\Documents\GitHub\Back-end\Go2Climb.API\Go2Climb.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Annotations.dll
 C:\Users\hbcor\Documents\Projects\Back-end\Go2Climb.API\Go2Climb.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\ALEJANDRO\Desktop\5TO\ProgramacionWeb\Back-end\Go2Climb.API\Go2Climb.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Annotations.dll

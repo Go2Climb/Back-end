@@ -7784,28 +7784,35 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\SALOME\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet": {}
+=======
+    "C:\\Users\\ALEJANDRO\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+>>>>>>> 06420588e3797f08a6ba9cade522e827017fc931
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SALOME\\Documents\\GitHub\\Back-end\\Go2Climb.API\\Go2Climb.API.Tests\\Go2Climb.API.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\ALEJANDRO\\Desktop\\5TO\\ProgramacionWeb\\Back-end\\Go2Climb.API\\Go2Climb.API.Tests\\Go2Climb.API.Tests.csproj",
       "projectName": "Go2Climb.API.Tests",
-      "projectPath": "C:\\Users\\SALOME\\Documents\\GitHub\\Back-end\\Go2Climb.API\\Go2Climb.API.Tests\\Go2Climb.API.Tests.csproj",
-      "packagesPath": "C:\\Users\\SALOME\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SALOME\\Documents\\GitHub\\Back-end\\Go2Climb.API\\Go2Climb.API.Tests\\obj\\",
+      "projectPath": "C:\\Users\\ALEJANDRO\\Desktop\\5TO\\ProgramacionWeb\\Back-end\\Go2Climb.API\\Go2Climb.API.Tests\\Go2Climb.API.Tests.csproj",
+      "packagesPath": "C:\\Users\\ALEJANDRO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ALEJANDRO\\Desktop\\5TO\\ProgramacionWeb\\Back-end\\Go2Climb.API\\Go2Climb.API.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+<<<<<<< HEAD
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+=======
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+>>>>>>> 06420588e3797f08a6ba9cade522e827017fc931
       ],
       "configFilePaths": [
-        "C:\\Users\\SALOME\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\ALEJANDRO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7818,8 +7825,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\SALOME\\Documents\\GitHub\\Back-end\\Go2Climb.API\\Go2Climb.API\\Go2Climb.API.csproj": {
-              "projectPath": "C:\\Users\\SALOME\\Documents\\GitHub\\Back-end\\Go2Climb.API\\Go2Climb.API\\Go2Climb.API.csproj"
+            "C:\\Users\\ALEJANDRO\\Desktop\\5TO\\ProgramacionWeb\\Back-end\\Go2Climb.API\\Go2Climb.API\\Go2Climb.API.csproj": {
+              "projectPath": "C:\\Users\\ALEJANDRO\\Desktop\\5TO\\ProgramacionWeb\\Back-end\\Go2Climb.API\\Go2Climb.API\\Go2Climb.API.csproj"
             }
           }
         }
@@ -7897,7 +7904,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -45,7 +45,7 @@ namespace Go2Climb.API.Controllers
             var resources = _mapper.Map<HiredService, HiredServiceResource>(service.Resource);
             return resources;
         }
-        
+
         [HttpPost]
         [SwaggerOperation(
             Summary = "Register A Hired Service",

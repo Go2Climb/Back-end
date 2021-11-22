@@ -9,5 +9,7 @@
         public double Price { get; set; }
         public string ScheduledDate { get; set; }
         public string Status { get; set; }
+        public CustomerResource Customer { get; set; }
+        public ServiceResource Service { get; set; }
     }
 }
