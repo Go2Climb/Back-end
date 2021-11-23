@@ -66,7 +66,9 @@ namespace Go2Climb.API.Services
             }
             catch (Exception e)
             {
-                throw new AppException($"An error occurred while saving the agency: {e.Message}");
+                
+                return new AgencyResponse($"An error occurred while saving the agency: {e.Message}");
+
             }
         }
 

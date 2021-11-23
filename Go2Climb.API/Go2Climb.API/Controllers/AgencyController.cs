@@ -37,7 +37,9 @@ namespace Go2Climb.API.Controllers
             var resources = _mapper.Map<IEnumerable<Agency>, IEnumerable<AgencyResource>>(agencies);
             return resources;
         }
-
+        [SwaggerOperation(
+            Summary = "Get Agency By Id",
+            Description = "Get An Agency already stored by its Id")]
         [HttpGet("{id}")]
         [SwaggerOperation(
             Summary = "Get a agency by Id",
@@ -49,6 +51,7 @@ namespace Go2Climb.API.Controllers
             var resources = _mapper.Map<Agency, AgencyResource>(agency);
             return Ok(resources);
         }
+
 
         [AllowAnonymous]
         [HttpPost("auth/sign-up")]

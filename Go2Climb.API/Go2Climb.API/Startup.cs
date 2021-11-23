@@ -81,7 +81,12 @@ namespace Go2Climb.API
             services.AddScoped<IServiceRepository, ServiceRepository>();
             services.AddScoped<IServiceService, ServiceService>();
 
+
             services.AddScoped<IUserService, UserService>();
+
+            services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
+            services.AddScoped<ISubscriptionService, SubscriptionService>();
+
             
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             
