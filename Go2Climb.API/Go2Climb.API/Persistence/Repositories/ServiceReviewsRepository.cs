@@ -22,12 +22,11 @@ namespace Go2Climb.API.Persistence.Repositories
 
         public async Task<IEnumerable<ServiceReview>> ListByServiceId(int serviceId)
         {
-            return await _context.ServiceReviews.Where(p => p.ServiceId == serviceId).Include(p => p.Service).ToListAsync();
-        }
+            return await _context.ServiceReviews.Where(p => p.ServiceId == serviceId).Include(p => p.Customer).ToListAsync();        }
 
         public async Task<IEnumerable<ServiceReview>> ListByCustomerId(int customerId)
         {
-            return await _context.ServiceReviews.Where(p => p.CustomerId == customerId).ToListAsync();
+            return await _context.ServiceReviews.Where(p => p.CustomerId == customerId).Include(p => p.Customer).ToListAsync();
         }
 
         public async Task AddAsync(ServiceReview serviceReview)

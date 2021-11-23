@@ -59,6 +59,21 @@ namespace Go2Climb.API.Services
         {
             return await _serviceRepository.ListByAgencyId(agencyId);
         }
+        
+        public async Task<IEnumerable<Service>> FilterByCategory(string name, int start, int limit)
+        {
+            switch (name)
+            {
+                case "offers":
+                    return await _serviceRepository.FilterByCategoryOffers(start, limit);
+                case "populars":
+                    return await _serviceRepository.FilterByCategoryPopulars(start, limit);
+                case "forYou":
+                    return await _serviceRepository.FilterByCategoryForYou(start, limit);
+                default:
+                    return await _serviceRepository.ListAsync();
+            }
+        }
 
         public async Task<ServiceResponse> SaveAsync(Service service)
         {
