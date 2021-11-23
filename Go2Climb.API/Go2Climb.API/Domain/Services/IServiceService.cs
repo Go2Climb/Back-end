@@ -13,7 +13,6 @@ namespace Go2Climb.API.Domain.Services
         Task<IEnumerable<Service>> ListByTextAndFilterMoney(string name, int minMoney, int maxMoney, int start, int limit);
         Task<IEnumerable<Service>> ListByTextAndFilterScore(string name, int score, int start, int limit);
         Task<IEnumerable<Service>> ListByTextAndAllFilter(string name, int score, int min, int max, int start, int limit);
-        Task<IEnumerable<Service>> FilterByCategory(string name, int start, int limit);
         Task<IEnumerable<Service>> ListByAgencyIdAsync(int agencyId);
         Task<ServiceResponse> SaveAsync(Service service);
         Task<ServiceResponse> UpdateAsync(int id, Service service);

@@ -7,11 +7,13 @@ namespace Go2Climb.API.Domain.Repositories
     public interface IAgencyRepository
     {
         Task<IEnumerable<Agency>> ListAsync();
-        Task<IEnumerable<Agency>> ListById(int id);
+        Task<Agency> FindByIdAsync(int id);
         Task<IEnumerable<Agency>> ListByName(string name);
-        Task<Agency> FindById(int id);
+        Agency FindById(int id);
         Task AddAsync(Agency agency);
         void Update(Agency agency);
         void Remove(Agency agency);
+        Task<Agency> FindByEmailAsync(string email);
+        public bool ExistsByEmail(string email);
     }
 }

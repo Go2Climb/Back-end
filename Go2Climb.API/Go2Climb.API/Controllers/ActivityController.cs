@@ -6,9 +6,11 @@ using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Extensions;
 using Go2Climb.API.Resources;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Go2Climb.API.Controllers
 {
+    [Produces("application/json")]
     [ApiController]
     [Route("/api/v1/[controller]")]
     public class ActivitiesController : ControllerBase
@@ -23,6 +25,10 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpGet]
+        [SwaggerOperation(
+            Summary = "Get All activities",
+            Description = "Get All activities already stored",
+            Tags = new[] {"Activities"})]
         public async Task<IEnumerable<ActivityResource>> GetAllAsync()
         {
             var activities = await _activityService.ListAsync();
@@ -31,6 +37,10 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [SwaggerOperation(
+            Summary = "Get Activity By Id",
+            Description = "Get A activity From The Database Identified By Its Id.",
+            Tags = new[] {"Activities"})]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var result = await _activityService.GetById(id);
@@ -42,6 +52,10 @@ namespace Go2Climb.API.Controllers
         }
 
         [HttpPost]
+        [SwaggerOperation(
+            Summary = "Register A activity",
+            Description = "Add A activity to a service in the Database.",
+            Tags = new[] {"Activities"})]
         public async Task<IActionResult> PostAsync([FromBody] SaveActivityResource resource)
         {
             if (!ModelState.IsValid)
@@ -59,6 +73,10 @@ namespace Go2Climb.API.Controllers
         }
         
         [HttpPut("{id}")]
+        [SwaggerOperation(
+            Summary = "Edit A activity",
+            Description = "Edit A activity of a service in the Database.",
+            Tags = new[] {"Activities"})]
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveActivityResource resource)
         {
             if (!ModelState.IsValid)
@@ -76,6 +94,10 @@ namespace Go2Climb.API.Controllers
             return Ok(activityResource);
         }
         [HttpDelete("{id}")]
+        [SwaggerOperation(
+            Summary = "Delete A activity",
+            Description = "Delete A activity of a service in the Database.",
+            Tags = new[] {"Activities"})]
         public async Task<IActionResult> DeleteAsync(int id)
         {
             var result = await _activityService.DeleteAsync(id);
