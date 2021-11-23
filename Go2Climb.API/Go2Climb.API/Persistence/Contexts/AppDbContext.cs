@@ -16,6 +16,7 @@ namespace Go2Climb.API.Persistence.Contexts
         public DbSet<Customer> Customers { get; set; }
         public DbSet<HiredService> HideServices { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
+        
         protected readonly IConfiguration _configuration;
 
         public AppDbContext(DbContextOptions options, IConfiguration configuration) : base(options)
@@ -151,13 +152,6 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Subscription>().Property(p => p.Price).IsRequired();
             builder.Entity<Subscription>().Property(p => p.Description).IsRequired();
 
-            /*builder.Entity<Subscription>().HasData
-            (
-                new Subscription {Id = 1, Name = "Basic", Price = 20, Description="Publish 3 services"},
-                new Subscription {Id = 2, Name = "Standard", Price = 35, Description="Publish 10 services"},
-                new Subscription {Id = 3, Name = "Premium", Price = 45, Description="Publish 50 services"}
-            );*/
-            
             builder.UseSnakeCaseNamingConventions();
         }
         
