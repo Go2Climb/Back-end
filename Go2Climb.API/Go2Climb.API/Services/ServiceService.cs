@@ -76,7 +76,7 @@ namespace Go2Climb.API.Services
             }
             catch (Exception e)
             {
-                return new ServiceResponse($"An error occurred while saving the Service: {e.Message}");
+                return new ServiceResponse($"An error ocurred while savint the Service: {e.Message}");
             }
         }
 

@@ -34,6 +34,7 @@ namespace Go2Climb.API.Controllers
             var resources = _mapper.Map<IEnumerable<ServiceReview>, IEnumerable<ServiceReviewResource>>(serviceReview);
             return resources;
         }
+        
         [SwaggerOperation(
             Summary = "Get a Service Review by id",
             Description = "Get the service review based on the id if it exists",

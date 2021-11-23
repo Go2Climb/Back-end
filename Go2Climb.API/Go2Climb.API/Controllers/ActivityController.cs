@@ -29,7 +29,6 @@ namespace Go2Climb.API.Controllers
             Summary = "Get All activities",
             Description = "Get All activities already stored",
             Tags = new[] {"Activities"})]
-
         public async Task<IEnumerable<ActivityResource>> GetAllAsync()
         {
             var activities = await _activityService.ListAsync();

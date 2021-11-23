@@ -101,18 +101,7 @@ namespace Go2Climb.API.Controllers
             var resources = _mapper.Map<IEnumerable<Service>, IEnumerable<ServiceResource>>(services);
             return resources;
         }
-        [HttpGet("[controller]/category")]
-        [SwaggerOperation(
-            Summary = "Get All Services",
-            Description = "Get All Services already stored",
-            Tags = new[] {"Services"})]
-        public async Task<IEnumerable<ServiceResource>> FilterByCategories(string name, int start, int limit)
-        {
-            var services = await _serviceService.FilterByCategory(name, start, limit);
-            var resources = _mapper.Map<IEnumerable<Service>, IEnumerable<ServiceResource>>(services);
-            return resources;
-            
-        }
+
         [HttpPost]
         [SwaggerOperation(
             Summary = "Register a new service from an agency",
@@ -160,7 +149,6 @@ namespace Go2Climb.API.Controllers
             Summary = "Unregister a service from an agency",
             Description = "Delete a service",
             Tags = new[] {"Services"})]
-
         public async Task<IActionResult> DeleteAsync(int id)
         {
             var result = await _serviceService.DeleteAsync(id);
