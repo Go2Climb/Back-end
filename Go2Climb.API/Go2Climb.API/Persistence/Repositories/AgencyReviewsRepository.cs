@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Go2Climb.API.Domain.Models;
@@ -38,6 +39,7 @@ namespace Go2Climb.API.Persistence.Repositories
         public async Task AddAsync(AgencyReview agencyReview)
         {
             await _context.AgencyReviews.AddAsync(agencyReview);
+            Console.WriteLine("aqui");
         }
         
         public void Remove(AgencyReview agencyReview)

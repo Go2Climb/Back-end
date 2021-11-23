@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Go2Climb.API.Domain.Models;
@@ -60,13 +61,11 @@ namespace Go2Climb.API.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
-
             var agencyReview = _mapper.Map<SaveAgencyReviewResource, AgencyReview>(resource);
             var result = await _agencyReviewService.SaveAsync(agencyReview);
-
+            Console.WriteLine(result.Message);
             if (!result.Success)
                 return BadRequest(result.Message);
-            
             var agencyReviewResource = _mapper.Map<AgencyReview, AgencyReviewResource>(result.Resource);
 
             return Ok(agencyReviewResource);

@@ -15,10 +15,12 @@ namespace Go2Climb.API.Services
         private readonly IAgencyRepository _agencyRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public AgencyReviewService(IAgencyReviewRepository agencyReviewRepository, IUnitOfWork unitOfWork)
+        public AgencyReviewService(IAgencyReviewRepository agencyReviewRepository, IUnitOfWork unitOfWork, ICustomerRepository customerRepository, IAgencyRepository agencyRepository)
         {
             _agencyReviewRepository = agencyReviewRepository;
             _unitOfWork = unitOfWork;
+            _customerRepository = customerRepository;
+            _agencyRepository = agencyRepository;
         }
         public async Task<IEnumerable<AgencyReview>> ListAsync()
         {
