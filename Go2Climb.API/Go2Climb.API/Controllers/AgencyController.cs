@@ -6,6 +6,7 @@ using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Extensions;
 using Go2Climb.API.Resources;
 using Go2Climb.API.Security.Authorization.Attributes;
+using Go2Climb.API.Security.Domain.Services.Communication;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -66,7 +67,7 @@ namespace Go2Climb.API.Controllers
             Summary = "Edit a agency",
             Description = "Updates the data of a stored agency given its id",
             Tags = new[] {"Agencies"})]
-        public async Task<IActionResult> Update(int id, SaveAgencyResource request)
+        public async Task<IActionResult> Update(int id, UpdateAgencyRequest request)
         {
             await _agencyService.UpdateAsync(id, request);
             return Ok(new {message = "Agency updated successfully"});

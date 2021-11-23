@@ -8,6 +8,7 @@ using Go2Climb.API.Domain.Services;
 using Go2Climb.API.Domain.Services.Communication;
 using Go2Climb.API.Resources;
 using Go2Climb.API.Security.Authorization.Handlers.Interfaces;
+using Go2Climb.API.Security.Domain.Services.Communication;
 using Go2Climb.API.Security.Exceptions;
 using BCryptNet = BCrypt.Net.BCrypt;
 
@@ -69,7 +70,7 @@ namespace Go2Climb.API.Services
             }
         }
 
-        public async Task UpdateAsync(int id, SaveAgencyResource request)
+        public async Task UpdateAsync(int id, UpdateAgencyRequest request)
         {
             var agency = GetById(id);
             

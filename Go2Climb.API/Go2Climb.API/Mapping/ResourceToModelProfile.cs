@@ -14,6 +14,14 @@ namespace Go2Climb.API.Mapping
 
             CreateMap<SaveActivityResource, Activity>();
             CreateMap<SaveAgencyResource, Agency>();
+            CreateMap<UpdateAgencyRequest, Agency>()
+                .ForAllMembers(options => options.Condition(
+                    (source, Target, property) =>
+                    {
+                        if (property == null) return false;
+                        if (property.GetType() == typeof(string) && string.IsNullOrEmpty((string)property)) return false;
+                        return true;
+                    }));
             CreateMap<SaveServiceResource, Service>();
 
             CreateMap<RegisterCustomerRequest, Customer>();
