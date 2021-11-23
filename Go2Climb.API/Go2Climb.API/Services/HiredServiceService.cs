@@ -50,7 +50,7 @@ namespace Go2Climb.API.Services
             }
             catch (Exception e)
             {
-                return new HideServiceResponse($"An error occurred while register the hired service: {e.Message}");
+                return new HideServiceResponse($"An error occurred while registering the hired service: {e.Message}");
             }
         }
 
