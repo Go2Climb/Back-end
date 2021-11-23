@@ -13,8 +13,8 @@ namespace Go2Climb.API.Controllers
     [Route("api/v1/[controller]")]
     public class HiredServiceController : ControllerBase
     {
-        private IHiredServiceService _hiredServiceService;
-        private IMapper _mapper;
+        private readonly IHiredServiceService _hiredServiceService;
+        private readonly IMapper _mapper;
 
         public HiredServiceController(IHiredServiceService hiredServiceService, IMapper mapper)
         {
