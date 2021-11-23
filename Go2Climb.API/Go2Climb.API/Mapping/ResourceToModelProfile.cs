@@ -35,10 +35,11 @@ namespace Go2Climb.API.Mapping
                     }));
             CreateMap<SaveCustomerResourse, Customer>();
             CreateMap<SaveHiredServiceResource, HiredService>();
-
+            CreateMap<SaveSubscriptionResource, Subscription>();
+            
             CreateMap<SaveAgencyReviewResource, AgencyReview>();
             CreateMap<SaveServiceReviewResource, ServiceReview>();
-
+            
         }
     }
 }

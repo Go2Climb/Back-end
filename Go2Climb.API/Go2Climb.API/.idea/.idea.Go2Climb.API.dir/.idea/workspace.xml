@@ -7,22 +7,95 @@
   <component name="ChangeListManager">
     <list default="true" id="5c432a74-5b42-4403-bf96-183cc39373be" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ServiceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ServiceController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IServiceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Repositories/IServiceRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Services/IServiceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Services/IServiceService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/Contexts/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Contexts/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/ServiceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Repositories/ServiceRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/ServiceReviewsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Repositories/ServiceReviewsRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/ServiceResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/ServiceResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/ServiceReviewService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ServiceReviewService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/ServiceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ServiceService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/Go2Climb.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Go2Climb.API.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/Go2Climb.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ActivityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Activities/Controllers/ActivityController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AgencyAgencyReviewsControllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Agencies/Controllers/AgencyAgencyReviewsControllers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AgencyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Agencies/Controllers/AgencyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AgencyHiredServicesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Agencies/Controllers/AgencyHiredServicesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AgencyReviewsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Controllers/AgencyReviewsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AgencyServiceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Agencies/Controllers/AgencyServiceController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CustomerAgencyReviewsControllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Customers/Controllers/CustomerAgencyReviewsControllers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CustomerHiredServicesControllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Customers/Controllers/CustomerHiredServicesControllers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CustomerServiceReviewsControllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Customers/Controllers/CustomerServiceReviewsControllers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CustomersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Customers/Controllers/CustomersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/HiredServiceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HiredServices/Controllers/HiredServiceController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ServiceActivityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Controllers/ServiceActivityController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ServiceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Controllers/ServiceController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ServiceReviewsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Controllers/ServiceReviewsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ServiceServiceReviewsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Controllers/ServiceServiceReviewsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/SubscriptionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Subscriptions/Controllers/SubscriptionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Models/Activity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Activities/Domain/Models/Activity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Models/Agency.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Agencies/Domain/Models/Agency.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Models/AgencyReview.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Domain/Models/AgencyReview.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Models/Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Customers/Domain/Models/Customer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Models/HiredService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HiredServices/Domain/Models/HiredService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Models/Service.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Domain/Models/Service.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Models/ServiceReview.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Domain/Models/ServiceReview.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Models/Subscription.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Subscriptions/Domain/Models/Subscription.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IActivityRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Activities/Domain/Repositories/IActivityRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IAgencyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Agencies/Domain/Repositories/IAgencyRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IAgencyReviewRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Domain/Repositories/IAgencyReviewRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/ICustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Customers/Domain/Repositories/ICustomerRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IHiredServiceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HiredServices/Domain/Repositories/IHiredServiceRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IServiceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Domain/Repositories/IServiceRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IServiceReviewRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Domain/Repositories/IServiceReviewRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/ISubscriptionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Subscriptions/Domain/Repositories/ISubscriptionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IUnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Domain/Repositories/IUnitOfWork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/Communication/ActivityResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Activities/Domain/Services/Communication/ActivityResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/Communication/AgencyResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Agencies/Domain/Services/Communication/AgencyResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/Communication/AgencyReviewResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Domain/Services/Communication/AgencyReviewResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/Communication/BaseResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Domain/Services/Communication/BaseResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/Communication/CustomerResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Customers/Domain/Services/Communication/CustomerResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/Communication/HideServiceResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HiredServices/Services/Communication/HideServiceResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/Communication/ServiceResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Domain/Services/Communication/ServiceResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/Communication/ServiceReviewResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Domain/Services/Communication/ServiceReviewResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/Communication/SubscriptionResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Subscriptions/Domain/Services/Communication/SubscriptionResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/IActivityService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Activities/Domain/Services/IActivityService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/IAgencyReviewService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Domain/Services/IAgencyReviewService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/IAgencyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Agencies/Domain/Services/IAgencyService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/ICustomerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Customers/Domain/Services/ICustomerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/IHiredServiceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HiredServices/Domain/Services/IHiredServiceService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/IServiceReviewService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Domain/Services/IServiceReviewService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/IServiceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Domain/Services/IServiceService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/ISubscriptionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Subscriptions/Domain/Services/ISubscriptionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Services/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Domain/Services/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Go2Climb.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Go2Climb.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Contexts/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Persistence/Contexts/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/ActivityRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Activities/Persistence/Repositories/ActivityRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/AgencyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Agencies/Persistence/Repositories/AgencyRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/AgencyReviewsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Persistence/Repositories/AgencyReviewsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/BaseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Persistence/Repositories/BaseRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/CustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Customers/Persistence/Repositories/CustomerRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/HiredServiceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HiredServices/Persistence/Repositories/HiredServiceRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/ServiceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Persistence/Repositories/ServiceRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/ServiceReviewsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Persistence/Repositories/ServiceReviewsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/SubscriptionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Subscriptions/Persistence/Repositories/SubscriptionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/UnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Persistence/Repositories/UnitOfWork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/ActivityResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Activities/Resources/ActivityResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/AgencyResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Agencies/Resources/AgencyResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/AgencyReviewResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Resources/AgencyReviewResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CustomerResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Customers/Resources/CustomerResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/HiredServiceResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HiredServices/Resources/HiredServiceResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/SaveActivityResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Activities/Resources/SaveActivityResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/SaveAgencyResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Agencies/Resources/SaveAgencyResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/SaveAgencyReviewResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Resources/SaveAgencyReviewResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/SaveCustomerResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Customers/Resources/SaveCustomerResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/SaveHiredServiceResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HiredServices/Resources/SaveHiredServiceResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/SaveServiceResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Resources/SaveServiceResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/SaveServiceReviewResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Resources/SaveServiceReviewResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/SaveSubscriptionResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Subscriptions/Resources/SaveSubscriptionResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/ServiceResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Resources/ServiceResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/ServiceReviewResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Resources/ServiceReviewResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/SubscriptionResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Subscriptions/Resources/SubscriptionResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ActivityService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Activities/Services/ActivityService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/AgencyReviewService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Services/AgencyReviewService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/AgencyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Agencies/Services/AgencyService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/CustomerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Customers/Services/CustomerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/HiredServiceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HiredServices/Services/HiredServiceService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ServiceReviewService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/Services/ServiceReviewService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ServiceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Services/ServiceService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/SubscriptionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Subscriptions/Services/SubscriptionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Services/UserService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +105,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e873a3d9b2a44c7dbb5d87bf03e7519026a00/64/248ede57/MySQLDatabaseCreator.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="20yiQgFfFpXef7gq6ZmoyNqNDkf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -39,9 +115,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3502052" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Go2Climb.API">
@@ -90,6 +169,7 @@
       <workItem from="1637115616335" duration="2600000" />
       <workItem from="1637175897673" duration="10661000" />
       <workItem from="1637353098613" duration="4325000" />
+      <workItem from="1637527542299" duration="6862000" />
     </task>
     <servers />
   </component>
