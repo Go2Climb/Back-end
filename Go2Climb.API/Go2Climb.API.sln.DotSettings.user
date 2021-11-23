@@ -4,5 +4,12 @@
     &lt;TestId&gt;NUnit3x::AD6102C9-5D61-42D1-B51B-AA324E145AC3::net5.0::Go2Climb.API.NUnitTests.SubscriptionServiceTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::AD6102C9-5D61-42D1-B51B-AA324E145AC3::net5.0::Go2Climb.API.NUnitTests.ServiceServiceTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::AD6102C9-5D61-42D1-B51B-AA324E145AC3::net5.0::Go2Climb.API.NUnitTests.ServiceReviewServiceTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AD6102C9-5D61-42D1-B51B-AA324E145AC3::net5.0::Go2Climb.API.NUnitTests.HiredServiceServiceTest.ListAsyncWhenNoHiredServiceReturnsEmptyCollection&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AD6102C9-5D61-42D1-B51B-AA324E145AC3::net5.0::Go2Climb.API.NUnitTests.HiredServiceServiceTest.GetByIdAsyncInvalidIdReturnsHiredServiceNotFoundResponse&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AD6102C9-5D61-42D1-B51B-AA324E145AC3::net5.0::Go2Climb.API.NUnitTests.HiredServiceServiceTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AD6102C9-5D61-42D1-B51B-AA324E145AC3::net5.0::Go2Climb.API.NUnitTests.CustomerServiceTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AD6102C9-5D61-42D1-B51B-AA324E145AC3::net5.0::Go2Climb.API.NUnitTests.AgencyServiceTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AD6102C9-5D61-42D1-B51B-AA324E145AC3::net5.0::Go2Climb.API.NUnitTests.AgencyReviewServiceTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AD6102C9-5D61-42D1-B51B-AA324E145AC3::net5.0::Go2Climb.API.NUnitTests.ActivityServiceTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

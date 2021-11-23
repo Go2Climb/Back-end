@@ -50,10 +50,10 @@ namespace Go2Climb.API.Services
         {
             var existingCustomer = _customerRepository.FindByIdAsync(agencyReview.CustomerId);
             if (existingCustomer.Result == null)
-                return new AgencyReviewResponse("Customer is not exist.");
+                return new AgencyReviewResponse("Customer does not exist.");
             var exitingAgency = _agencyRepository.FindById(agencyReview.AgencyId);
             if (exitingAgency.Result == null)
-                return new AgencyReviewResponse("Agency is not exist.");
+                return new AgencyReviewResponse("Agency does not exist.");
             try
             {
                 await _agencyReviewRepository.AddAsync(agencyReview);
