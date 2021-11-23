@@ -7,12 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5c432a74-5b42-4403-bf96-183cc39373be" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Go2Climb.API.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ServiceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ServiceController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IServiceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Repositories/IServiceRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Services/IServiceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Services/IServiceService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/Repositories/ServiceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Repositories/ServiceRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/ServiceResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/ServiceResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/ServiceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ServiceService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Go2Climb.API.dll" afterDir="false" />
@@ -60,6 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Go2Climb.API">
